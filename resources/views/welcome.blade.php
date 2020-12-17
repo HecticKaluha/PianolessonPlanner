@@ -15,10 +15,10 @@
                 <div class="flex flex-wrap text-center justify-center">
                     <div class="w-full lg:w-6/12 px-4">
                         <h1 class="text-white font-semibold text-5xl">
-                            Start learning, start living.
+                            Sunny Lee, Jazz Pianist
                         </h1>
-                        <p class="mt-4 text-lg text-gray-300">
-                            Playing the piano is fun and good for your brain. Step up your game, start learning now, with private piano lessons from Sunhee Lee.
+                        <p class="mt-4 lg:w-7/12 mr-auto ml-auto text-lg text-gray-300">
+                            <span class="italic">"Sunny is an ambitious musician who is open to other styles and genres of music."</span> <br>- Sabra, S.X.O
                         </p>
                     </div>
                 </div>
@@ -26,23 +26,23 @@
             </div>
             <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden" style="height: 70px; transform: translateZ(0px);">
                 <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-                    <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
+                    <polygon class="text-gray-50 fill-current" points="2560 0 2560 100 0 100"></polygon>
                 </svg>
             </div>
         </div>
-        <section class="pb-20 bg-gray-300 -mt-24">
+        <section class="pb-20 bg-gray-50 -mt-24">
 
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap">
                     <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                             <div class="px-4 py-5 flex-auto">
-                                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
+                                <div class="text-white p-3 text-center text-3xl inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-yellow-400">
                                     <i class="fas fa-user-graduate"></i>
                                 </div>
-                                <h6 class="text-xl font-semibold">Graduate Student</h6>
+                                <h6 class="text-xl font-semibold">Professional</h6>
                                 <p class="mt-2 mb-4 text-gray-600">
-                                    Sunhee Lee is a graduate student from the Fontys school of the arts, Jazz Pianist.
+                                    Sunny Lee is a graduate student from the Fontys school of the arts, Jazz Pianist.
                                 </p>
                             </div>
                         </div>
@@ -50,12 +50,12 @@
                     <div class="w-full md:w-4/12 px-4 text-center">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                             <div class="px-4 py-5 flex-auto">
-                                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
-                                    <i class="fas fa-glasses"></i>
+                                <div class="text-white p-3 text-center text-3xl inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-pink-400">
+                                    <i class="fas fa-palette"></i>
                                 </div>
-                                <h6 class="text-xl font-semibold">Innovator</h6>
+                                <h6 class="text-xl font-semibold">Creator</h6>
                                 <p class="mt-2 mb-4 text-gray-600">
-                                    Sunhee keeps innovating, and likes to mix things up. Different disciplines overlap in her work.
+                                    There are no boundaries for Sunny. She can make anything work.
                                 </p>
                             </div>
                         </div>
@@ -63,12 +63,12 @@
                     <div class="pt-6 w-full md:w-4/12 px-4 text-center">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                             <div class="px-4 py-5 flex-auto">
-                                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
+                                <div class="text-white p-3 text-center text-3xl inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-500">
                                     <i class="fas fa-globe"></i>
                                 </div>
                                 <h6 class="text-xl font-semibold">International friendly</h6>
                                 <p class="mt-2 mb-4 text-gray-600">
-                                    Sunhee, herself, is an international student from Korea. Lessons can be in English or Korean.
+                                    Sunny, herself, is an international from Korea. Lessons can be in English or Korean.
                                 </p>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                             <i class="fas fa-address-card text-xl"></i>
                         </div>
                         <h3 class="text-3xl mb-2 font-semibold leading-normal">
-                            About Sunhee Lee, Jazz Pianist
+                            About Sunny Lee, Jazz Pianist
                         </h3>
                         <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
                             Write some text about yourself here. Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -95,19 +95,19 @@
                             elit. Dolorum incidunt officia ut? Ab aperiam, atque, autem delectus doloribus eos, maiores
                             numquam odit quae quia repellat voluptatem. Ipsa molestiae quae velit.
                         </p>
-                        <a href="#" class="font-bold text-gray-800 mt-8 block mb-4">Check out Sunhee Lee's Instagram...</a>
+                        <a href="#" class="font-bold text-gray-800 mt-8 block mb-4">Check out Sunny Lee's Instagram...</a>
                     </div>
                     <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
-                            <img alt="..." src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1051&amp;q=80" class="w-full align-middle rounded-t-lg"/>
+                        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-purple-500">
+                            <img alt="..." src="{{asset('img/professional.jpg')}}" class="w-full align-middle rounded-t-lg"/>
                             <blockquote class="relative p-8 mb-4">
                                 <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
-                                    <polygon points="-30,95 583,95 583,65" class="text-pink-600 fill-current"></polygon>
+                                    <polygon points="-30,95 583,95 583,65" class="text-purple-500 fill-current"></polygon>
                                 </svg>
                                 <h4 class="text-xl font-bold text-white">
                                     Professional artist </h4>
                                 <p class="text-md font-light mt-2 text-white">
-                                    Sunhee Lee is in multiple bands and duo's. One of those is SXO, founded by her. She writes, composes and directs her own music and video-clips too!
+                                    Sunny Lee is in multiple bands and duo's. One of those is SXO, founded by her. She writes, composes and directs her own music and video-clips too!
                                 </p>
                             </blockquote>
                         </div>
@@ -116,7 +116,7 @@
             </div>
         </section>
 
-        <a name="videos"></a>
+        <a name="images"></a>
         <section class="pb-20 relative block bg-gray-900">
             <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height: 80px; transform: translateZ(0px);">
                 <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
@@ -133,44 +133,102 @@
                     </div>
                 </div>
 
+                <div class="text-gray-600 p-3 mx-4 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
+                    <i class="fas fa-images text-3xl"></i>
+                </div>
 
-                <div class="flex flex-wrap mt-12 justify-center">
-                    <div class="w-full md:w-12/12 mb-12 ml-auto mr-auto px-4">
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
-                        <blockquote class="relative mt-4 mb-4">
+                <div class="flex flex-wrap mt-12 mb-12 justify-center">
+                    <div class="w-full md:w-7/12 ml-auto mr-auto px-4">
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                        <blockquote class="relative mt-4">
                             <h4 class="text-xl font-bold text-white">
-                                Final exam </h4>
+                                Final exam 1</h4>
                             <p class="text-md font-light mt-2 text-white">
-                                Sunhee Lee's final exam performance with live audience.
+                                Sunny Lee's final exam performance with live audience.
                             </p>
                         </blockquote>
-                    </div>
-                    <p>slider here</p>
 
-                    <a name="images"></a>
+                        <div class="flex flex-wrap justify-center">
+                            <div class="w-full md:w-6/12 mt-12 ml-auto mr-auto md:pr-4">
+                                <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                                <blockquote class="relative mt-4">
+                                    <h4 class="text-xl font-bold text-white">
+                                        Final exam 2.1</h4>
+                                    <p class="text-md font-light mt-2 text-white">
+                                        Sunny Lee's final exam performance with live audience.
+                                    </p>
+                                </blockquote>
+                            </div>
 
-                    <div class="w-full md:w-5/12 mb-12  ml-auto mr-auto px-4">
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
-                        <blockquote class="relative mt-4 mb-4">
-                            <h4 class="text-xl font-bold text-white">
-                                Final exam </h4>
-                            <p class="text-md font-light mt-2 text-white">
-                                Sunhee Lee's final exam performance with live audience.
-                            </p>
-                        </blockquote>
+                            <div class="w-full md:w-6/12 mt-12 mb-12 ml-auto mr-auto md:pl-4">
+                                <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                                <blockquote class="relative mt-4">
+                                    <h4 class="text-xl font-bold text-white">
+                                        Final exam 2.2</h4>
+                                    <p class="text-md font-light mt-2 text-white">
+                                        Sunny Lee's final exam performance with live audience.
+                                    </p>
+                                </blockquote>
+                            </div>
+
+                        </div>
                     </div>
 
                     <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/banner.jpg')}}"/>
+                        <blockquote class="relative mt-4 mb-12">
+                            <h4 class="text-xl font-bold text-white">
+                                Final exam 4</h4>
+                            <p class="text-md font-light mt-2 text-white">
+                                Sunny Lee's final exam performance with live audience.
+                            </p>
+                        </blockquote>
+
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
                         <blockquote class="relative mt-4 mb-4">
                             <h4 class="text-xl font-bold text-white">
-                                Final exam </h4>
+                                Final exam 5</h4>
                             <p class="text-md font-light mt-2 text-white">
-                                Sunhee Lee's final exam performance with live audience.
+                                Sunny Lee's final exam performance with live audience.
                             </p>
                         </blockquote>
                     </div>
+
                 </div>
+
+
+                <a name="videos"></a>
+
+                <div class="text-gray-600 p-3 mx-4 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
+                    <i class="fas fa-film text-3xl"></i>
+                </div>
+
+                <div class="flex flex-wrap mt-12 justify-center">
+                    <div class="w-full lg:w-12/12 mb-12 ml-auto mr-auto px-4">
+
+                        <video class="w-full" controls>
+                            <source src="{{asset('video/beer.mp4')}}" type="video/mp4" playsInline>
+{{--                            <source src="{{asset('video/SXO.ogg')}}" type="video/ogg">--}}
+                            Your browser does not support HTML video.
+                        </video>
+
+                        <blockquote class="relative mt-4 mb-4">
+                            <h4 class="text-xl font-bold text-white">
+                                Current movie </h4>
+                            <p class="text-md font-light mt-2 text-white">
+                                The description oof the video that is currently playing.
+                            </p>
+                        </blockquote>
+                    </div>
+
+                    <div class="w-full md:w-12/12 mb-12  ml-auto mr-auto px-4">
+                        <p>
+                            slider
+                        </p>
+                    </div>
+                </div>
+
+
                 <div class="flex flex-wrap pt-12">
                     <div class="w-full lg:w-6/12 px-4">
                         <a href="#" class="font-bold text-gray-500 mt-8 text-lg">Learn more about me...</a>
@@ -198,7 +256,7 @@
                             </div>
                             <h3 class="text-3xl font-semibold">Private lessons</h3>
                             <p class="mt-4 text-lg leading-relaxed text-gray-600">
-                               Sunhee provides private one-on-one lessons with a quality guarantee. Lessons can vary from 45 minutes for children, to 2 hours max. for adults. It doesnt matter if you have never touched a piano and can't read notes, or if you're an advanced player. <br>
+                               Sunny provides private one-on-one lessons with a quality guarantee. Lessons can vary from 45 minutes for children, to 2 hours max. for adults. It doesnt matter if you have never touched a piano and can't read notes, or if you're an advanced player. <br>
                                 You can take lessons in the following categories:
                             </p>
                             <ul class="list-none mt-6">
@@ -245,7 +303,7 @@
                     <div class="w-full lg:w-6/12 px-4">
                         <h2 class="text-4xl font-semibold">Plan your lesson now!</h2>
                         <p class="text-lg leading-relaxed m-4 text-gray-600">
-                           The calendar below shows Sunhee's availability. Click on a green part of a day to reserve your spot.
+                           The calendar below shows Sunny's availability. Click on a green part of a day to reserve your spot.
                         </p>
                     </div>
                 </div>
@@ -258,7 +316,7 @@
                                 </div>
                                 <div>
                                     <h4 class="text-gray-600">
-                                        Sunhee is available! Claim that spot.
+                                        Sunny is available! Claim that spot.
                                     </h4>
                                 </div>
                             </div>
@@ -269,7 +327,7 @@
                                     <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-red-500 bg-red-500 mr-3"><i class="fab fa-circle"></i></span>
                                 </div>
                                 <div>
-                                    <h4 class="text-gray-600">Sunhee is booked, try another date.</h4>
+                                    <h4 class="text-gray-600">Sunny is booked, try another date.</h4>
                                 </div>
                             </div>
                         </li>
