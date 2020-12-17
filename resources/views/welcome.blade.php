@@ -7,18 +7,17 @@
                 <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
             </div>
             <div class="container relative mx-auto">
-                <div class="items-center flex flex-wrap">
-                    <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                        <div class="pr-12">
-                            <h1 class="text-white font-semibold text-5xl">
-                                Your story starts with us. </h1>
-                            <p class="mt-4 text-lg text-gray-300">
-                                This is a simple example of a Landing Page you can build using
-                                Tailwind Starter Kit. It features multiple CSS components
-                                based on the Tailwindcss design system. </p>
-                        </div>
+                <div class="flex flex-wrap text-center justify-center">
+                    <div class="w-full lg:w-6/12 px-4">
+                        <h1 class="text-white font-semibold text-5xl">
+                            Start learning, start living.
+                        </h1>
+                        <p class="mt-4 text-lg text-gray-300">
+                            Playing the piano is fun and good for your brain. Step up your game, start learning now, with private piano lessons from Sunhee Lee.
+                        </p>
                     </div>
                 </div>
+
             </div>
             <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden" style="height: 70px; transform: translateZ(0px);">
                 <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
@@ -33,12 +32,12 @@
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                             <div class="px-4 py-5 flex-auto">
                                 <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                                    <i class="fas fa-award"></i>
+                                    <i class="fas fa-user-graduate"></i>
                                 </div>
-                                <h6 class="text-xl font-semibold">Awarded Agency</h6>
+                                <h6 class="text-xl font-semibold">Graduate Student</h6>
                                 <p class="mt-2 mb-4 text-gray-600">
-                                    Divide details about your product or agency work into parts.
-                                    A paragraph describing a feature will be enough. </p>
+                                    Sunhee Lee is a graduate student from the Fontys school of the arts, Jazz Pianist.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -46,12 +45,12 @@
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                             <div class="px-4 py-5 flex-auto">
                                 <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
-                                    <i class="fas fa-retweet"></i>
+                                    <i class="fas fa-glasses"></i>
                                 </div>
-                                <h6 class="text-xl font-semibold">Free Revisions</h6>
+                                <h6 class="text-xl font-semibold">Innovator</h6>
                                 <p class="mt-2 mb-4 text-gray-600">
-                                    Keep you user engaged by providing meaningful information.
-                                    Remember that by this time, the user is curious. </p>
+                                    Sunhee keeps innovating, and likes to mix things up. Different disciplines overlap in her work.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -59,12 +58,12 @@
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                             <div class="px-4 py-5 flex-auto">
                                 <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
-                                    <i class="fas fa-fingerprint"></i>
+                                    <i class="fas fa-globe"></i>
                                 </div>
-                                <h6 class="text-xl font-semibold">Verified Company</h6>
+                                <h6 class="text-xl font-semibold">International friendly</h6>
                                 <p class="mt-2 mb-4 text-gray-600">
-                                    Write a few lines about each one. A paragraph describing a
-                                    feature will be enough. Keep you user engaged! </p>
+                                    Sunhee, herself, is an international student from Korea. Lessons can be in English or Korean.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -72,20 +71,23 @@
                 <div class="flex flex-wrap items-center mt-32">
                     <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
                         <div class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
-                            <i class="fas fa-user-friends text-xl"></i>
+                            <i class="fas fa-address-card text-xl"></i>
                         </div>
                         <h3 class="text-3xl mb-2 font-semibold leading-normal">
-                            Working with us is a pleasure </h3>
+                            About Sunhee Lee Jazz Pianist
+                        </h3>
                         <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
-                            Don't let your uses guess by attaching tooltips and popoves to
-                            any element. Just make sure you enable them first via
-                            JavaScript. </p>
+                            Write some text about yourself here. Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Atque beatae consequuntur dolore doloribus, eius eveniet explicabo illo iste iure
+                            laboriosam libero necessitatibus numquam obcaecati perspiciatis, possimus tenetur vero
+                            vitae voluptatem!
+                        </p>
                         <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
-                            The kit comes with three pre-built pages to help you get started
-                            faster. You can change the text and images and you're good to
-                            go. Just make sure you enable them first via JavaScript. </p>
-                        <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation" class="font-bold text-gray-800 mt-8">Check
-                            Tailwind Starter Kit!</a>
+                            Write Some text about your career here. Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Dolorum incidunt officia ut? Ab aperiam, atque, autem delectus doloribus eos, maiores
+                            numquam odit quae quia repellat voluptatem. Ipsa molestiae quae velit.
+                        </p>
+                        <a href="#" class="font-bold text-gray-800 mt-8">Learn more about me...</a>
                     </div>
                     <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
@@ -95,17 +97,76 @@
                                     <polygon points="-30,95 583,95 583,65" class="text-pink-600 fill-current"></polygon>
                                 </svg>
                                 <h4 class="text-xl font-bold text-white">
-                                    Top Notch Services </h4>
+                                    Professional artist </h4>
                                 <p class="text-md font-light mt-2 text-white">
-                                    The Arctic Ocean freezes every winter and much of the
-                                    sea-ice then thaws every summer, and that process will
-                                    continue whatever happens. </p>
+                                    Sunhee Lee is in multiple bands and duo's. One of those is SXO, founded by her. She writes, composes and directs her own music and video-clips too!
+                                </p>
                             </blockquote>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="pb-20 relative block bg-gray-900">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height: 80px; transform: translateZ(0px);">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-4 lg:pt-24 lg:pb-24">
+                <div class="flex flex-wrap">
+                    <div class="w-full lg:w-6/12 px-4">
+                        <h2 class="text-4xl font-semibold text-white">Showcase - My work</h2>
+                        <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
+                            Below are some highlights from my career so far.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-wrap mt-12 justify-center">
+                    <div class="w-full md:w-5/12 mb-12 ml-auto mr-auto px-4">
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <blockquote class="relative mt-4 mb-4">
+                            <h4 class="text-xl font-bold text-white">
+                                Final exam </h4>
+                            <p class="text-md font-light mt-2 text-white">
+                                Sunhee Lee's final exam performance with live audience.
+                            </p>
+                        </blockquote>
+                    </div>
+
+                    <div class="w-full md:w-5/12 mb-12  ml-auto mr-auto px-4">
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <blockquote class="relative mt-4 mb-4">
+                            <h4 class="text-xl font-bold text-white">
+                                Final exam </h4>
+                            <p class="text-md font-light mt-2 text-white">
+                                Sunhee Lee's final exam performance with live audience.
+                            </p>
+                        </blockquote>
+                    </div>
+
+                    <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <blockquote class="relative mt-4 mb-4">
+                            <h4 class="text-xl font-bold text-white">
+                                Final exam </h4>
+                            <p class="text-md font-light mt-2 text-white">
+                                Sunhee Lee's final exam performance with live audience.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="flex flex-wrap pt-12">
+                    <div class="w-full lg:w-6/12 px-4">
+                        <a href="#" class="font-bold text-gray-500 mt-8 text-lg">Learn more about me...</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="relative py-20">
             <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height: 80px; transform: translateZ(0px);">
                 <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
@@ -120,9 +181,9 @@
                     <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
                         <div class="md:pr-12">
                             <div class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
-                                <i class="fas fa-rocket text-xl"></i>
+                                <i class="fas fa-user-friends text-xl"></i>
                             </div>
-                            <h3 class="text-3xl font-semibold">A growing company</h3>
+                            <h3 class="text-3xl font-semibold">Private lessons</h3>
                             <p class="mt-4 text-lg leading-relaxed text-gray-600">
                                 The extension comes with three pre-built pages to help you get
                                 started faster. You can change the text and images and you're
@@ -336,5 +397,14 @@
             </div>
         </section>
     </main>
+
+    @push('scripts')
+        <script>
+            function toggleNavbar(collapseID) {
+                document.getElementById(collapseID).classList.toggle("hidden");
+                document.getElementById(collapseID).classList.toggle("block");
+            }
+        </script>
+    @endpush
 
 @endsection
