@@ -9,15 +9,15 @@
         <div class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden" id="example-collapse-navbar">
             <ul class="flex flex-col lg:flex-row list-none mr-auto">
                 <li class="flex items-center">
-                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#"><i class="lg:text-gray-300 text-gray-500 fas fa-user-circle text-lg leading-lg mr-2"></i>
+                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#about-me"><i class="lg:text-gray-300 text-gray-500 fas fa-user-circle text-lg leading-lg mr-2"></i>
                         About me</a>
                 </li>
                 <li class="flex items-center">
-                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#"><i class="lg:text-gray-300 text-gray-500 fas fa-eye text-lg leading-lg mr-2"></i>
+                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#showcase"><i class="lg:text-gray-300 text-gray-500 fas fa-eye text-lg leading-lg mr-2"></i>
                         Showcase</a>
                 </li>
                 <li class="flex items-center">
-                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#"><i class="lg:text-gray-300 text-gray-500 fas fa-chalkboard-teacher text-lg leading-lg mr-2"></i>
+                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#private-lesson"><i class="lg:text-gray-300 text-gray-500 fas fa-chalkboard-teacher text-lg leading-lg mr-2"></i>
                         Plan a lesson</a>
                 </li>
             </ul>

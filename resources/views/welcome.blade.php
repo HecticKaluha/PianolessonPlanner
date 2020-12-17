@@ -1,6 +1,11 @@
-@extends ('layouts.master')
+@extends ('layouts.landing')
 
 @section ('content')
+
+    @push('style')
+        <link rel="stylesheet" href="{{asset('css/bootstrap-calendar.css')}}">
+{{--        <link rel="stylesheet" href="{{asset('css/bootstrap-calendar-extra.css')}}">--}}
+    @endpush
     <main>
         <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
             <div class="absolute top-0 w-full h-full bg-center bg-cover" style='background-image: url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1267&amp;q=80");'>
@@ -26,6 +31,7 @@
             </div>
         </div>
         <section class="pb-20 bg-gray-300 -mt-24">
+
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap">
                     <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
@@ -68,6 +74,8 @@
                         </div>
                     </div>
                 </div>
+
+                <a name="about-me"></a>
                 <div class="flex flex-wrap items-center mt-32">
                     <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
                         <div class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
@@ -87,7 +95,7 @@
                             elit. Dolorum incidunt officia ut? Ab aperiam, atque, autem delectus doloribus eos, maiores
                             numquam odit quae quia repellat voluptatem. Ipsa molestiae quae velit.
                         </p>
-                        <a href="#" class="font-bold text-gray-800 mt-8">Learn more about me...</a>
+                        <a href="#" class="font-bold text-gray-800 mt-8 block mb-4">Learn more about me...</a>
                     </div>
                     <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
@@ -108,6 +116,7 @@
             </div>
         </section>
 
+        <a name="showcase"></a>
         <section class="pb-20 relative block bg-gray-900">
             <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height: 80px; transform: translateZ(0px);">
                 <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
@@ -167,6 +176,7 @@
             </div>
         </section>
 
+        <a name="private-lesson"></a>
         <section class="relative py-20">
             <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height: 80px; transform: translateZ(0px);">
                 <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
@@ -181,13 +191,13 @@
                     <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
                         <div class="md:pr-12">
                             <div class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
-                                <i class="fas fa-user-friends text-xl"></i>
+                                <i class="fas fa-calendar-day text-xl"></i>
                             </div>
                             <h3 class="text-3xl font-semibold">Private lessons</h3>
                             <p class="mt-4 text-lg leading-relaxed text-gray-600">
-                                The extension comes with three pre-built pages to help you get
-                                started faster. You can change the text and images and you're
-                                good to go. </p>
+                               Sunhee provides private one-on-one lessons with a quality guarantee. Lessons can vary from 45 minutes for children, to 2 hours max. for adults. It doesnt matter if you have never touched a piano and can't read notes, or if you're an advanced player. <br>
+                                You can take lessons in the following categories:
+                            </p>
                             <ul class="list-none mt-6">
                                 <li class="py-2">
                                     <div class="flex items-center">
@@ -230,86 +240,49 @@
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap justify-center text-center mb-24">
                     <div class="w-full lg:w-6/12 px-4">
-                        <h2 class="text-4xl font-semibold">Here are our heroes</h2>
+                        <h2 class="text-4xl font-semibold">Plan your lesson now!</h2>
                         <p class="text-lg leading-relaxed m-4 text-gray-600">
-                            According to the National Oceanic and Atmospheric
-                            Administration, Ted, Scambos, NSIDClead scentist, puts the
-                            potentially record maximum. </p>
+                           The calendar below shows Sunhee's availability. Click on a green part of a day to reserve your spot.
+                        </p>
                     </div>
                 </div>
-                <div class="flex flex-wrap">
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-1-800x800.jpg" class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;"/>
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Ryan Tompson</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    Web Developer </p>
-                                <div class="mt-6">
-                                    <button class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-twitter"></i></button>
-                                    <button class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-facebook-f"></i></button>
-                                    <button class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-dribbble"></i>
-                                    </button>
+                <div class="flex flex-wrap px-4 justify-between">
+                    <ul class="list-none pr-4 mt-24 md:w-12/12 lg:w-3/12">
+                        <li class="py-2">
+                            <div class="flex items-center">
+                                <div>
+                                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-500 bg-green-500 mr-3"><i class="fas fa-circle"></i></span>
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-600">
+                                        Sunhee is available! Claim that spot.
+                                    </h4>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-2-800x800.jpg" class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;"/>
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Romina Hadid</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    Marketing Specialist </p>
-                                <div class="mt-6">
-                                    <button class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-google"></i></button>
-                                    <button class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </button>
+                        </li>
+                        <li class="py-2">
+                            <div class="flex items-center">
+                                <div>
+                                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-red-500 bg-red-500 mr-3"><i class="fab fa-circle"></i></span>
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-600">Sunhee is booked, try another date.</h4>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-3-800x800.jpg" class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;"/>
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Alexa Smith</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    UI/UX Designer </p>
+                        </li>
+                    </ul>
+
+                    <div class="w-full md:w-12/12 lg:w-9/12 lg:mb-0 mb-12">
+                        <div class="">
+                            <div class=" text-center">
                                 <div class="mt-6">
-                                    <button class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-google"></i></button>
-                                    <button class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-twitter"></i></button>
-                                    <button class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-instagram"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-4-470x470.png" class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;"/>
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Jenna Kardi</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    Founder and CEO </p>
-                                <div class="mt-6">
-                                    <button class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-dribbble"></i></button>
-                                    <button class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-google"></i></button>
-                                    <button class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-twitter"></i></button>
-                                    <button class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                                        <i class="fab fa-instagram"></i>
-                                    </button>
+{{--                                    Bootstrap calendar--}}
+                                    <div id='wrap'>
+                                        <div id='calendar'></div>
+                                        <div style='clear:both'></div>
+                                    </div>
+{{--                                    End of Bootstrap calendar--}}
+
                                 </div>
                             </div>
                         </div>
@@ -399,6 +372,12 @@
     </main>
 
     @push('scripts')
+{{--        bootstrap calendar js--}}
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="{{asset('js/bootstrap-calendar.js')}}"></script>
+        <script src="{{asset('js/bootstrap-calendar-extra.js')}}"></script>
+{{--        end of bootstrap calendar js--}}
         <script>
             function toggleNavbar(collapseID) {
                 document.getElementById(collapseID).classList.toggle("hidden");
