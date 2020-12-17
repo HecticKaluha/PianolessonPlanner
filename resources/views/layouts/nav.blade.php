@@ -13,8 +13,12 @@
                         About me</a>
                 </li>
                 <li class="flex items-center">
-                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#showcase"><i class="lg:text-gray-300 text-gray-500 fas fa-eye text-lg leading-lg mr-2"></i>
-                        Showcase</a>
+                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#images"><i class="lg:text-gray-300 text-gray-500 fas fa-images text-lg leading-lg mr-2"></i>
+                        Images</a>
+                </li>
+                <li class="flex items-center">
+                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#videos"><i class="lg:text-gray-300 text-gray-500 fas fa-film text-lg leading-lg mr-2"></i>
+                        Videos</a>
                 </li>
                 <li class="flex items-center">
                     <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#private-lesson"><i class="lg:text-gray-300 text-gray-500 fas fa-chalkboard-teacher text-lg leading-lg mr-2"></i>

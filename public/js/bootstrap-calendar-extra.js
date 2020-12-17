@@ -63,22 +63,22 @@ $(document).ready(function() {
         },
         allDaySlot: false,
         selectHelper: true,
-        select: function(start, end, allDay) {
-            var title = prompt('Event Title:');
-            if (title) {
-                calendar.fullCalendar('renderEvent',
-                    {
-                        title: title,
-                        start: start,
-                        end: end,
-                        allDay: allDay
-                    },
-                    true // make the event "stick"
-                );
-            }
-            calendar.fullCalendar('unselect');
-        },
-        droppable: true, // this allows things to be dropped onto the calendar !!!
+        // select: function(start, end, allDay) {
+        //     var title = prompt('Event Title:');
+        //     if (title) {
+        //         calendar.fullCalendar('renderEvent',
+        //             {
+        //                 title: title,
+        //                 start: start,
+        //                 end: end,
+        //                 allDay: allDay
+        //             },
+        //             true // make the event "stick"
+        //         );
+        //     }
+        //     calendar.fullCalendar('unselect');
+        // },
+        droppable: false, // this allows things to be dropped onto the calendar !!!
         drop: function(date, allDay) { // this function is called when something is dropped
 
             // retrieve the dropped element's stored Event Object
@@ -105,51 +105,47 @@ $(document).ready(function() {
 
         events: [
             {
-                title: 'All Day Event',
-                start: new Date(y, m, 1)
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: new Date(y, m, d-3, 16, 0),
-                allDay: false,
-                className: 'info'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: new Date(y, m, d+4, 16, 0),
-                allDay: false,
-                className: 'info'
-            },
-            {
-                title: 'Meeting',
-                start: new Date(y, m, d, 10, 30),
-                allDay: false,
-                className: 'important'
-            },
-            {
-                title: 'Lunch',
+                title: '',
                 start: new Date(y, m, d, 12, 0),
                 end: new Date(y, m, d, 14, 0),
                 allDay: false,
-                className: 'important'
+                className: 'bg-green-500'
             },
             {
-                title: 'Birthday Party',
-                start: new Date(y, m, d+1, 19, 0),
-                end: new Date(y, m, d+1, 22, 30),
+                title: '',
+                start: new Date(y, m, d+1, 12, 0),
+                end: new Date(y, m, d+1, 14, 0),
                 allDay: false,
+                className: 'bg-green-500'
             },
             {
-                title: 'Click for Google',
-                start: new Date(y, m, 28),
-                end: new Date(y, m, 29),
-                url: 'https://ccp.cloudaccess.net/aff.php?aff=5188',
-                className: 'success'
-            }
+                title: '',
+                start: new Date(y, m, d+15, 12, 0),
+                end: new Date(y, m, d+15, 14, 0),
+                allDay: false,
+                className: 'bg-green-500'
+            },
+            {
+                title: '',
+                start: new Date(y, m, d+7, 14, 0),
+                end: new Date(y, m, d+7, 15, 0),
+                allDay: false,
+                className: 'bg-red-500'
+            },
+            {
+                title: '',
+                start: new Date(y, m, d+7, 14, 0),
+                end: new Date(y, m, d+7, 15, 0),
+                allDay: false,
+                className: 'bg-green-500'
+            },
+            {
+                title: '',
+                start: new Date(y, m, d-3, 14, 0),
+                end: new Date(y, m, d-3, 15, 0),
+                allDay: false,
+                className: 'bg-red-500'
+            },
         ],
     });
-
-
 });

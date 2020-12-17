@@ -8,7 +8,7 @@
     @endpush
     <main>
         <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
-            <div class="absolute top-0 w-full h-full bg-center bg-cover" style='background-image: url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1267&amp;q=80");'>
+            <div class="absolute top-0 w-full h-full bg-center bg-cover" style='background-image: url("{{asset('img/banner.jpg')}}");'>
                 <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
             </div>
             <div class="container relative mx-auto">
@@ -82,7 +82,7 @@
                             <i class="fas fa-address-card text-xl"></i>
                         </div>
                         <h3 class="text-3xl mb-2 font-semibold leading-normal">
-                            About Sunhee Lee Jazz Pianist
+                            About Sunhee Lee, Jazz Pianist
                         </h3>
                         <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
                             Write some text about yourself here. Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -95,7 +95,7 @@
                             elit. Dolorum incidunt officia ut? Ab aperiam, atque, autem delectus doloribus eos, maiores
                             numquam odit quae quia repellat voluptatem. Ipsa molestiae quae velit.
                         </p>
-                        <a href="#" class="font-bold text-gray-800 mt-8 block mb-4">Learn more about me...</a>
+                        <a href="#" class="font-bold text-gray-800 mt-8 block mb-4">Check out Sunhee Lee's Instagram...</a>
                     </div>
                     <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
@@ -116,7 +116,7 @@
             </div>
         </section>
 
-        <a name="showcase"></a>
+        <a name="videos"></a>
         <section class="pb-20 relative block bg-gray-900">
             <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height: 80px; transform: translateZ(0px);">
                 <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
@@ -135,7 +135,7 @@
 
 
                 <div class="flex flex-wrap mt-12 justify-center">
-                    <div class="w-full md:w-5/12 mb-12 ml-auto mr-auto px-4">
+                    <div class="w-full md:w-12/12 mb-12 ml-auto mr-auto px-4">
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
                         <blockquote class="relative mt-4 mb-4">
                             <h4 class="text-xl font-bold text-white">
@@ -145,6 +145,9 @@
                             </p>
                         </blockquote>
                     </div>
+                    <p>slider here</p>
+
+                    <a name="images"></a>
 
                     <div class="w-full md:w-5/12 mb-12  ml-auto mr-auto px-4">
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
@@ -299,44 +302,43 @@
             <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
                 <div class="flex flex-wrap text-center justify-center">
                     <div class="w-full lg:w-6/12 px-4">
-                        <h2 class="text-4xl font-semibold text-white">Build something</h2>
+                        <h2 class="text-4xl font-semibold text-white">Anything left unanswered?</h2>
                         <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
-                            Put the potentially record low maximum sea ice extent tihs year
-                            down to low ice. According to the National Oceanic and
-                            Atmospheric Administration, Ted, Scambos. </p>
+                            Whenever you have any more questions, feel free to contact me through the form below. I will do my best to answer your questions in full.
+                        </p>
                     </div>
                 </div>
-                <div class="flex flex-wrap mt-12 justify-center">
-                    <div class="w-full lg:w-3/12 px-4 text-center">
-                        <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                            <i class="fas fa-medal text-xl"></i>
-                        </div>
-                        <h6 class="text-xl mt-5 font-semibold text-white">
-                            Excelent Services </h6>
-                        <p class="mt-2 mb-4 text-gray-500">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content. </p>
-                    </div>
-                    <div class="w-full lg:w-3/12 px-4 text-center">
-                        <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                            <i class="fas fa-poll text-xl"></i>
-                        </div>
-                        <h5 class="text-xl mt-5 font-semibold text-white">
-                            Grow your market </h5>
-                        <p class="mt-2 mb-4 text-gray-500">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content. </p>
-                    </div>
-                    <div class="w-full lg:w-3/12 px-4 text-center">
-                        <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                            <i class="fas fa-lightbulb text-xl"></i>
-                        </div>
-                        <h5 class="text-xl mt-5 font-semibold text-white">Launch time</h5>
-                        <p class="mt-2 mb-4 text-gray-500">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content. </p>
-                    </div>
-                </div>
+{{--                <div class="flex flex-wrap mt-12 justify-center">--}}
+{{--                    <div class="w-full lg:w-3/12 px-4 text-center">--}}
+{{--                        <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">--}}
+{{--                            <i class="fas fa-medal text-xl"></i>--}}
+{{--                        </div>--}}
+{{--                        <h6 class="text-xl mt-5 font-semibold text-white">--}}
+{{--                            Excelent Services </h6>--}}
+{{--                        <p class="mt-2 mb-4 text-gray-500">--}}
+{{--                            Some quick example text to build on the card title and make up--}}
+{{--                            the bulk of the card's content. </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="w-full lg:w-3/12 px-4 text-center">--}}
+{{--                        <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">--}}
+{{--                            <i class="fas fa-poll text-xl"></i>--}}
+{{--                        </div>--}}
+{{--                        <h5 class="text-xl mt-5 font-semibold text-white">--}}
+{{--                            Grow your market </h5>--}}
+{{--                        <p class="mt-2 mb-4 text-gray-500">--}}
+{{--                            Some quick example text to build on the card title and make up--}}
+{{--                            the bulk of the card's content. </p>--}}
+{{--                    </div>--}}
+{{--                    <div class="w-full lg:w-3/12 px-4 text-center">--}}
+{{--                        <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">--}}
+{{--                            <i class="fas fa-lightbulb text-xl"></i>--}}
+{{--                        </div>--}}
+{{--                        <h5 class="text-xl mt-5 font-semibold text-white">Launch time</h5>--}}
+{{--                        <p class="mt-2 mb-4 text-gray-500">--}}
+{{--                            Some quick example text to build on the card title and make up--}}
+{{--                            the bulk of the card's content. </p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </section>
         <section class="relative block py-24 lg:pt-0 bg-gray-900">
@@ -345,9 +347,9 @@
                     <div class="w-full lg:w-6/12 px-4">
                         <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300">
                             <div class="flex-auto p-5 lg:p-10">
-                                <h4 class="text-2xl font-semibold">Want to work with us?</h4>
+                                <h4 class="text-2xl font-semibold">More Questions?</h4>
                                 <p class="leading-relaxed mt-1 mb-4 text-gray-600">
-                                    Complete this form and we will get back to you in 24 hours. </p>
+                                    Complete this form and I will get back to you ASAP. </p>
                                 <div class="relative w-full mb-3 mt-8">
                                     <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="full-name">Full
                                         Name</label><input type="text" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Full Name" style="transition: all 0.15s ease 0s;"/>

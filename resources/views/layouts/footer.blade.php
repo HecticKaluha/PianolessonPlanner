@@ -9,17 +9,16 @@
             <div class="w-full lg:w-6/12 px-4">
                 <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
                 <h5 class="text-lg mt-0 mb-2 text-gray-700">
-                    Find us on any of these platforms, we respond 1-2 business days. </h5>
+                    Find me on any of these platforms to see more of me or my work. </h5>
                 <div class="mt-6">
                     <button class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3" type="button">
-                        <i class="flex fab fa-twitter"></i></button>
+                        <i class="flex fab fa-instagram"></i></button>
+                    <button class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3" type="button">
+                        <i class="flex fab fa-instagram-square"></i></button>
                     <button class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3" type="button">
                         <i class="flex fab fa-facebook-square"></i></button>
                     <button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3" type="button">
-                        <i class="flex fab fa-dribbble"></i></button>
-                    <button class="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3" type="button">
-                        <i class="flex fab fa-github"></i>
-                    </button>
+                        <i class="flex fab fa-wix"></i></button>
                 </div>
             </div>
             <div class="w-full lg:w-6/12 px-4">
@@ -28,42 +27,34 @@
                         <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
                         <ul class="list-unstyled">
                             <li>
-                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation">About
-                                    Us</a>
+                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#">Blog</a>
                             </li>
                             <li>
-                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com">Blog</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial">Github</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free">Free
-                                    Products</a>
+                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#">Book me for events</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="w-full lg:w-4/12 px-4">
-                        <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Other Resources</span>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md">MIT
-                                    License</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms">Terms
-                                    &amp; Conditions</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy">Privacy
-                                    Policy</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us">Contact
-                                    Us</a>
-                            </li>
-                        </ul>
-                    </div>
+{{--                    <div class="w-full lg:w-4/12 px-4">--}}
+{{--                        <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Other Resources</span>--}}
+{{--                        <ul class="list-unstyled">--}}
+{{--                            <li>--}}
+{{--                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md">MIT--}}
+{{--                                    License</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms">Terms--}}
+{{--                                    &amp; Conditions</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy">Privacy--}}
+{{--                                    Policy</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us">Contact--}}
+{{--                                    Us</a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
