@@ -220,61 +220,36 @@
                         </blockquote>
                     </div>
 
-                    <div class="w-full w-12/12 mb-12 ml-auto mr-auto px-4 space-x-4 overflow-x-scroll flex">
 
-                        <div class="xs:w-5/12 md:w-3/12 mb-12 flex-none">
-                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
-                            <blockquote class="relative mt-4">
-                                <h4 class="text-sm font-bold text-white">
-                                    Video 1
-                                </h4>
-                            </blockquote>
-                        </div>
+                </div>
 
-                        <div class="sm:w-5/12 md:w-3/12 mb-12 flex-none">
-                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
-                            <blockquote class="relative mt-4">
-                                <h4 class="text-sm font-bold text-white">
-                                    Video 2
-                                </h4>
-                            </blockquote>
-                        </div>
+                <div class="flex flex-wrap mt-12 justify-center">
 
-                        <div class="sm:w-5/12 md:w-3/12 mb-12 flex-none">
-                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
-                            <blockquote class="relative mt-4">
-                                <h4 class="text-sm font-bold text-white">
-                                    Video 3
-                                </h4>
-                            </blockquote>
-                        </div>
+                    <div class="w-full w-12/12 space-x-4 overflow-x-scroll flex justify-between px-4 rail">
 
-                        <div class="sm:w-5/12 md:w-3/12 mb-12 flex-none">
-                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
-                            <blockquote class="relative mt-4">
-                                <h4 class="text-sm font-bold text-white">
-                                    Video 4
-                                </h4>
-                            </blockquote>
-                        </div>
-
-                        <div class="sm:w-5/12 md:w-3/12 mb-12 flex-none">
-                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
-                            <blockquote class="relative mt-4">
-                                <h4 class="text-sm font-bold text-white">
-                                    Video 5
-                                </h4>
-                            </blockquote>
-                        </div>
+                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/banner.jpg')}}"/>
+                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+{{--                        <blockquote class="relative mt-4">--}}
+{{--                            <h4 class="text-sm font-bold text-white">--}}
+{{--                                Video 1--}}
+{{--                            </h4>--}}
+{{--                        </blockquote>--}}
 
                     </div>
+
                 </div>
 
                 <div class="flex flex-wrap pt-12">
-                    <div class="w-full lg:w-6/12 px-4">
-                        <a href="#" class="font-bold text-gray-500 mt-8 text-lg">More videos...</a>
+                    <div class="w-full px-4">
+                        <a href="https://www.youtube.com/channel/UCf-Mu_IQF7t78sPrxSFBaHg" target="_blank" class="font-bold text-gray-500 mt-8 text-lg">More videos...</a>
                     </div>
                 </div>
+
             </div>
         </section>
 

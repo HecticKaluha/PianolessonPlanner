@@ -2,3 +2,14 @@
     object-fit:contain;
     max-height:75vh;
 }
+.rail{
+    border-right:1rem solid transparent;
+    max-height:25vh;
+}
+.rail img{
+    object-fit:contain;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}

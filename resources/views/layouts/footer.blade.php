@@ -23,7 +23,7 @@
             </div>
             <div class="w-full lg:w-6/12 px-4">
                 <div class="flex flex-wrap items-top mb-6">
-                    <div class="w-full lg:w-4/12 px-4 ml-auto">
+                    <div class="w-full lg:w-4/12 pt-4 lg:pt-0 lg:px-4 ml-auto">
                         <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
                         <ul class="list-unstyled">
                             <li>
