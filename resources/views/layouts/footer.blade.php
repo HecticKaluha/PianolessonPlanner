@@ -4,7 +4,7 @@
             <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
         </svg>
     </div>
-    <div class="container mx-auto px-4">
+    <div class="sm:container mx-auto px-4">
         <div class="flex flex-wrap">
             <div class="w-full lg:w-6/12 px-4">
                 <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>

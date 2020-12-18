@@ -3,15 +3,15 @@
 @section ('content')
 
     @push('style')
-        <link rel="stylesheet" href="{{asset('css/bootstrap-calendar.css')}}">
+        <link rel="stylesheet" href="{{asset('css/bootstrap-calendar/bootstrap-calendar.css')}}">
 {{--        <link rel="stylesheet" href="{{asset('css/bootstrap-calendar-extra.css')}}">--}}
     @endpush
     <main>
-        <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
+        <div class="relative xs:pt-32 pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
             <div class="absolute top-0 w-full h-full bg-center bg-cover" style='background-image: url("{{asset('img/banner.jpg')}}");'>
                 <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
             </div>
-            <div class="container relative mx-auto">
+            <div class="sm:container relative mx-auto">
                 <div class="flex flex-wrap text-center justify-center">
                     <div class="w-full lg:w-6/12 px-4">
                         <h1 class="text-white font-semibold text-5xl">
@@ -32,7 +32,7 @@
         </div>
         <section class="pb-20 bg-gray-50 -mt-24">
 
-            <div class="container mx-auto px-4">
+            <div class="sm:container mx-auto px-4">
                 <div class="flex flex-wrap">
                     <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pt-6 w-full md:w-4/12 px-4 text-center">
+                    <div class="md:pt-6 w-full md:w-4/12 px-4 text-center">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                             <div class="px-4 py-5 flex-auto">
                                 <div class="text-white p-3 text-center text-3xl inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-500">
@@ -123,7 +123,7 @@
                     <polygon class="text-gray-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
                 </svg>
             </div>
-            <div class="container mx-auto px-4 lg:pt-24 lg:pb-24">
+            <div class="sm:container mx-auto px-4 lg:pt-24 lg:pb-24">
                 <div class="flex flex-wrap">
                     <div class="w-full lg:w-12/12 px-4">
                         <h2 class="text-4xl font-semibold text-white">Showcase - My work</h2>
@@ -215,26 +215,69 @@
                             <h4 class="text-xl font-bold text-white">
                                 Current movie </h4>
                             <p class="text-md font-light mt-2 text-white">
-                                The description oof the video that is currently playing.
+                                The description of the video that is currently playing.
                             </p>
                         </blockquote>
                     </div>
 
-                    <div class="w-full md:w-12/12 mb-12  ml-auto mr-auto px-4">
-                        <p>
-                            slider
-                        </p>
+                    <div class="w-full w-12/12 mb-12 ml-auto mr-auto px-4 space-x-4 overflow-x-scroll flex">
+
+                        <div class="xs:w-5/12 md:w-3/12 mb-12 flex-none">
+                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                            <blockquote class="relative mt-4">
+                                <h4 class="text-sm font-bold text-white">
+                                    Video 1
+                                </h4>
+                            </blockquote>
+                        </div>
+
+                        <div class="sm:w-5/12 md:w-3/12 mb-12 flex-none">
+                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                            <blockquote class="relative mt-4">
+                                <h4 class="text-sm font-bold text-white">
+                                    Video 2
+                                </h4>
+                            </blockquote>
+                        </div>
+
+                        <div class="sm:w-5/12 md:w-3/12 mb-12 flex-none">
+                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                            <blockquote class="relative mt-4">
+                                <h4 class="text-sm font-bold text-white">
+                                    Video 3
+                                </h4>
+                            </blockquote>
+                        </div>
+
+                        <div class="sm:w-5/12 md:w-3/12 mb-12 flex-none">
+                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                            <blockquote class="relative mt-4">
+                                <h4 class="text-sm font-bold text-white">
+                                    Video 4
+                                </h4>
+                            </blockquote>
+                        </div>
+
+                        <div class="sm:w-5/12 md:w-3/12 mb-12 flex-none">
+                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                            <blockquote class="relative mt-4">
+                                <h4 class="text-sm font-bold text-white">
+                                    Video 5
+                                </h4>
+                            </blockquote>
+                        </div>
+
                     </div>
                 </div>
 
-
                 <div class="flex flex-wrap pt-12">
                     <div class="w-full lg:w-6/12 px-4">
-                        <a href="#" class="font-bold text-gray-500 mt-8 text-lg">Learn more about me...</a>
+                        <a href="#" class="font-bold text-gray-500 mt-8 text-lg">More videos...</a>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <a name="private-lesson"></a>
         <section class="relative py-20">
@@ -243,7 +286,7 @@
                     <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
                 </svg>
             </div>
-            <div class="container mx-auto px-4">
+            <div class="sm:container mx-auto px-4">
                 <div class="items-center flex flex-wrap">
                     <div class="w-full md:w-4/12 ml-auto mr-auto px-4 mb-6">
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/banner.jpg')}}"/>
@@ -296,8 +339,9 @@
                 </div>
             </div>
         </section>
+
         <section class="pt-20 pb-48">
-            <div class="container mx-auto px-4">
+            <div class="sm:container mx-auto px-4">
                 <div class="flex flex-wrap justify-center text-center mb-24">
                     <div class="w-full lg:w-6/12 px-4">
                         <h2 class="text-4xl font-semibold">Plan your lesson now!</h2>
@@ -356,7 +400,7 @@
                     <polygon class="text-gray-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
                 </svg>
             </div>
-            <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
+            <div class="sm:container mx-auto px-4 lg:pt-24 lg:pb-64">
                 <div class="flex flex-wrap text-center justify-center">
                     <div class="w-full lg:w-6/12 px-4">
                         <h2 class="text-4xl font-semibold text-white">Anything left unanswered?</h2>
@@ -365,41 +409,10 @@
                         </p>
                     </div>
                 </div>
-{{--                <div class="flex flex-wrap mt-12 justify-center">--}}
-{{--                    <div class="w-full lg:w-3/12 px-4 text-center">--}}
-{{--                        <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">--}}
-{{--                            <i class="fas fa-medal text-xl"></i>--}}
-{{--                        </div>--}}
-{{--                        <h6 class="text-xl mt-5 font-semibold text-white">--}}
-{{--                            Excelent Services </h6>--}}
-{{--                        <p class="mt-2 mb-4 text-gray-500">--}}
-{{--                            Some quick example text to build on the card title and make up--}}
-{{--                            the bulk of the card's content. </p>--}}
-{{--                    </div>--}}
-{{--                    <div class="w-full lg:w-3/12 px-4 text-center">--}}
-{{--                        <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">--}}
-{{--                            <i class="fas fa-poll text-xl"></i>--}}
-{{--                        </div>--}}
-{{--                        <h5 class="text-xl mt-5 font-semibold text-white">--}}
-{{--                            Grow your market </h5>--}}
-{{--                        <p class="mt-2 mb-4 text-gray-500">--}}
-{{--                            Some quick example text to build on the card title and make up--}}
-{{--                            the bulk of the card's content. </p>--}}
-{{--                    </div>--}}
-{{--                    <div class="w-full lg:w-3/12 px-4 text-center">--}}
-{{--                        <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">--}}
-{{--                            <i class="fas fa-lightbulb text-xl"></i>--}}
-{{--                        </div>--}}
-{{--                        <h5 class="text-xl mt-5 font-semibold text-white">Launch time</h5>--}}
-{{--                        <p class="mt-2 mb-4 text-gray-500">--}}
-{{--                            Some quick example text to build on the card title and make up--}}
-{{--                            the bulk of the card's content. </p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
             </div>
         </section>
         <section class="relative block py-24 lg:pt-0 bg-gray-900">
-            <div class="container mx-auto px-4">
+            <div class="sm:container mx-auto px-4">
                 <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
                     <div class="w-full lg:w-6/12 px-4">
                         <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300">
@@ -434,8 +447,8 @@
 {{--        bootstrap calendar js--}}
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="{{asset('js/bootstrap-calendar.js')}}"></script>
-        <script src="{{asset('js/bootstrap-calendar-extra.js')}}"></script>
+        <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar.js')}}"></script>
+        <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar-extra.js')}}"></script>
 {{--        end of bootstrap calendar js--}}
         <script>
             function toggleNavbar(collapseID) {
