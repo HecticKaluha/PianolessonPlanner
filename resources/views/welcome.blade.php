@@ -225,21 +225,28 @@
 
                 <div class="flex flex-wrap mt-12 justify-center">
 
-                    <div class="w-full w-12/12 space-x-4 overflow-x-scroll flex justify-between px-4 rail">
+                    <div id="videoCarousel" class="w-full w-12/12 space-x-4 overflow-x-scroll flex justify-between px-4 rail">
 
-                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
-                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/banner.jpg')}}"/>
-                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full h-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/banner.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
 {{--                        <blockquote class="relative mt-4">--}}
 {{--                            <h4 class="text-sm font-bold text-white">--}}
 {{--                                Video 1--}}
 {{--                            </h4>--}}
 {{--                        </blockquote>--}}
 
+                    </div>
+
+                    <div id="videoCarouselButtonLeft" class="h-6 w-6 text-gray-600 p-2 mx-4 text-center inline-flex items-center justify-center w-8 mb-6 shadow-lg rounded-full bg-gray-100">
+                        <i class="fas fa-caret-left text-lg"></i>
+                    </div>
+                    <div id="videoCarouselButtonRight" class="h-6 w-6 top-50 text-gray-600 p-2 mx-4 text-center inline-flex items-center justify-center w-8  mb-6 shadow-lg rounded-full bg-gray-100">
+                        <i class="fas fa-caret-right text-lg"></i>
                     </div>
 
                 </div>
@@ -424,6 +431,8 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar.js')}}"></script>
         <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar-extra.js')}}"></script>
+
+        <script src="{{asset('js/carousel/carousel.js')}}"></script>
 {{--        end of bootstrap calendar js--}}
         <script>
             function toggleNavbar(collapseID) {

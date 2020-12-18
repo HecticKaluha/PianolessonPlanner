@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 .video {
     object-fit:contain;
     max-height:75vh;
@@ -5,9 +8,12 @@
 .rail{
     border-right:1rem solid transparent;
     max-height:25vh;
+    transition:1s elasease;
+    scroll-behavior: smooth;
 }
 .rail img{
     object-fit:contain;
+    height:90%;
 }
 ::-webkit-scrollbar {
     width: 0px;
