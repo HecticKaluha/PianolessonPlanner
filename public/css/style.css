@@ -8,7 +8,6 @@ html{
 .rail{
     border-right:1rem solid transparent;
     max-height:25vh;
-    transition:1s elasease;
     scroll-behavior: smooth;
 }
 .rail img{

@@ -241,10 +241,10 @@
 
                     </div>
 
-                    <div id="videoCarouselButtonLeft" class="h-6 w-6 text-gray-600 p-2 mx-4 text-center inline-flex items-center justify-center w-8 mb-6 shadow-lg rounded-full bg-gray-100">
+                    <div id="videoCarouselButtonLeft" class="cursor-pointer h-6 w-6 text-gray-600 p-2 mx-4 text-center inline-flex items-center justify-center w-8 mb-6 shadow-lg rounded-full bg-gray-100">
                         <i class="fas fa-caret-left text-lg"></i>
                     </div>
-                    <div id="videoCarouselButtonRight" class="h-6 w-6 top-50 text-gray-600 p-2 mx-4 text-center inline-flex items-center justify-center w-8  mb-6 shadow-lg rounded-full bg-gray-100">
+                    <div id="videoCarouselButtonRight" class="cursor-pointer h-6 w-6 top-50 text-gray-600 p-2 mx-4 text-center inline-flex items-center justify-center w-8  mb-6 shadow-lg rounded-full bg-gray-100">
                         <i class="fas fa-caret-right text-lg"></i>
                     </div>
 
