@@ -166,6 +166,7 @@ fabric.properties
 
 /node_modules
 /public/hot
+/public/video/*
 /public/storage
 /storage/*.key
 /vendor

@@ -27,13 +27,13 @@
             </ul>
             <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
                 <li class="flex items-center">
-                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#"><i class="lg:text-gray-300 text-gray-500 fab fa-instagram text-lg leading-lg "></i><span class="lg:hidden inline-block ml-2">Share</span></a>
+                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#" target="_blank"><i class="lg:text-gray-300 text-gray-500 fab fa-instagram text-lg leading-lg "></i><span class="lg:hidden inline-block ml-2">Instagram</span></a>
                 </li>
                 <li class="flex items-center">
-                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#"><i class="lg:text-gray-300 text-gray-500 fab fa-facebook text-lg leading-lg "></i><span class="lg:hidden inline-block ml-2">Tweet</span></a>
+                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#" target="_blank"><i class="lg:text-gray-300 text-gray-500 fab fa-facebook text-lg leading-lg "></i><span class="lg:hidden inline-block ml-2">Facebook</span></a>
                 </li>
                 <li class="flex items-center">
-                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#"><i class="lg:text-gray-300 text-gray-500 fab fa-youtube text-lg leading-lg "></i><span class="lg:hidden inline-block ml-2">Star</span></a>
+                    <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="https://www.youtube.com/channel/UCf-Mu_IQF7t78sPrxSFBaHg" target="_blank"><i class="lg:text-gray-300 text-gray-500 fab fa-youtube text-lg leading-lg "></i><span class="lg:hidden inline-block ml-2">Youtube</span></a>
                 </li>
             </ul>
         </div>

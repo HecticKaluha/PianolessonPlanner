@@ -125,7 +125,7 @@
             </div>
             <div class="container mx-auto px-4 lg:pt-24 lg:pb-24">
                 <div class="flex flex-wrap">
-                    <div class="w-full lg:w-6/12 px-4">
+                    <div class="w-full lg:w-12/12 px-4">
                         <h2 class="text-4xl font-semibold text-white">Showcase - My work</h2>
                         <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
                             Below are some highlights from my career so far.
@@ -204,11 +204,10 @@
                 </div>
 
                 <div class="flex flex-wrap mt-12 justify-center">
-                    <div class="w-full lg:w-12/12 mb-12 ml-auto mr-auto px-4">
+                    <div class="w-full lg:w-10/12 mb-12 px-4">
 
-                        <video class="w-full" controls>
-                            <source src="{{asset('video/beer.mp4')}}" type="video/mp4" playsInline>
-{{--                            <source src="{{asset('video/SXO.ogg')}}" type="video/ogg">--}}
+                        <video class="w-full max-h-screen min-w-full video rounded-lg shadow-lg" controls>
+                            <source src="{{asset('video/RDWF.mp4')}}" type="video/mp4">
                             Your browser does not support HTML video.
                         </video>
 
@@ -246,8 +245,8 @@
             </div>
             <div class="container mx-auto px-4">
                 <div class="items-center flex flex-wrap">
-                    <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"/>
+                    <div class="w-full md:w-4/12 ml-auto mr-auto px-4 mb-6">
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/banner.jpg')}}"/>
                     </div>
                     <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
                         <div class="md:pr-12">
