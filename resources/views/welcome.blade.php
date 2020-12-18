@@ -206,7 +206,7 @@
                 <div class="flex flex-wrap mt-12 justify-center">
                     <div class="w-full lg:w-10/12 mb-12 px-4">
 
-                        <video class="w-full max-h-screen min-w-full video rounded-lg shadow-lg" controls>
+                        <video id="videoElement" class="w-full max-h-screen min-w-full video rounded-lg shadow-lg" controls>
                             <source src="{{asset('video/RDWF.mp4')}}" type="video/mp4">
                             Your browser does not support HTML video.
                         </video>
@@ -227,13 +227,12 @@
 
                     <div id="videoCarousel" class="w-full w-12/12 space-x-4 overflow-x-scroll flex justify-between px-4 rail">
 
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/banner.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" src="{{asset('img/professional.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" src="{{asset('img/banner.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" src="{{asset('img/professional.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" src="{{asset('img/banner.jpg')}}"/>
 {{--                        <blockquote class="relative mt-4">--}}
 {{--                            <h4 class="text-sm font-bold text-white">--}}
 {{--                                Video 1--}}
