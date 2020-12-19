@@ -24,14 +24,14 @@ function changeVideo(e){
 
     source.setAttribute('src', e.target.dataset.src);
 
+    removeClasses();
     videoElement.appendChild(source);
     videoElement.appendChild(text);
 
     videoElement.load();
-    removeClasses();
+    
     e.target.classList.add(...nowPlayingClassList);
-
-    videoElement.play();
+    videoElement.autoplay = true;
 }
 
 function removeClasses(){
