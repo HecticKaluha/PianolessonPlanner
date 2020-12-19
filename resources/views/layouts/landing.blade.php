@@ -28,7 +28,7 @@
 <body>
 <div id="page-loader"></div>
 
-{{--@include('layouts.aside')--}}
+@include('components.browser-notice')
 
 @include('layouts.nav')
 

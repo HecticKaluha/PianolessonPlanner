@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
-        return view('welcome');
+    public function index(Request $request){
+        $currentBrowser = parent::checkBrowser($request);
+
+        return view('welcome', compact('currentBrowser'));
     }
 }
