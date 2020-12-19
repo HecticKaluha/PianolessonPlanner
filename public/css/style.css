@@ -9,6 +9,11 @@ html{
     height:75vh;
     width:100%;
 }
+.biography{
+    max-height:75vh;
+    overflow-y:hidden;
+    transition: max-height 0.5s ease;
+}
 .rail{
     border-right:1rem solid transparent;
     max-height:25vh;

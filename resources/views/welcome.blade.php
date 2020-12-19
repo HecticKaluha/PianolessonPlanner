@@ -73,28 +73,64 @@
                     </div>
                 </div>
 
-                <div id="about-me" class="flex flex-wrap items-center mt-32">
-                    <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
+                <div id="about-me" class="flex flex-wrap mt-32">
+                    <div class="w-full lg:w-7/12 xl:w-6/12 px-4 mr-auto ml-auto">
                         <div class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
                             <i class="fas fa-address-card text-xl"></i>
                         </div>
                         <h3 class="text-3xl mb-2 font-semibold leading-normal">
                             About Sunny Lee, Jazz Pianist
                         </h3>
-                        <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
-                            Write some text about yourself here. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Atque beatae consequuntur dolore doloribus, eius eveniet explicabo illo iste iure
-                            laboriosam libero necessitatibus numquam obcaecati perspiciatis, possimus tenetur vero
-                            vitae voluptatem!
-                        </p>
-                        <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
-                            Write Some text about your career here. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Dolorum incidunt officia ut? Ab aperiam, atque, autem delectus doloribus eos, maiores
-                            numquam odit quae quia repellat voluptatem. Ipsa molestiae quae velit.
-                        </p>
-                        <a href="#" class="font-bold text-gray-800 mt-8 block mb-4">Check out Sunny Lee's Instagram...</a>
+                        <div id="biography" class="biography biographyAnimation text-justify">
+                            <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
+                                “Sunny is an ambitious musician who is open to
+                                other styles and genre of music.” - Sabra, S.X.O duo
+                                member. Sunny is a pianist, composer,
+                                accompanist, arranger, sound engineer, producer,
+                                video and image maker. She makes her own music
+                                videos and records her own songs in the studio
+                                herself. She plays not only an acoustic piano but also
+                                synthesizer (electronic keyboard). Her range is from
+                                classical, jazz to pop. Sunny’s composition style is
+                                also wide: from contemporary jazz to lofi music. Her
+                                jazz perspective got larger too after she came to the Netherlands: from traditional swing jazz to
+                                contemporary and funk. As the range is wide, you can see her interests are in all music and that
+                                means she is a multiplayer. If you see what she has done so far, you will see she really has
+                                proactive attitude when playing and she can work with everyone.
+                            </p>
+                            <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
+                                Sunny was born and raised in South Korea and recently graduated Fontys Conservatorium in the
+                                Netherlands as a jazz pianist. As she experienced two totally different cultures, she mixed them in
+                                her own way. You can see all the videos of her piano skills on her Youtube channel as well as her
+                                graduation performance (the best video to see her playing varied styles). The most popular song of
+                                graduation performance from audience was the arrangement of Mario brother’s game theme.
+                                Sunny plays on the grand piano and electronic keys on the song with three brass players,
+                                vibraphone and a rhythm section. Now, she is working on a new project with a visual artist, you will
+                                get to see the new music and video clip soon.
+                            </p>
+                            <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
+                                Sunny started to play the piano classically when she was 3 years old. Her mom is also a musician
+                                (a classical singer), inspired her a lot. She is one of the reasons why Sunny started music. The
+                                most valuable of inspirational information that she got from her mom is knowledge of how singers
+                                work. Naturally she got perfect pitch and critical way of thinking about music. Maybe we will see
+                                her as a singer-song writer some day. Sunny is a challenger and passionate person and that is
+                                why she decided to study abroad across the Earth. Her musical journey has just started.
+                            </p>
+                            <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
+                                Sunny is an artist not only a musician. She believes music has to come with visual parts.
+                                Musicians have to be able to offer to audience the image behind the music. So the musician is an
+                                icon of the music and represents it. In her free time she likes coloring and making jewelry, she likes
+                                to create new things. And she puts the creation in her music and music videos as well. That is an
+                                interdisciplinary work. Nowadays she is busy with fusion music and concentrates more on this style
+                                of music. Sunny is a deep thinker. To portray the thoughts she has through her music is of the
+                                utmost importance. Whilst she understands her music fully, she enjoys her audience to search and
+                                find the meaning in her music. She knows how to put ideas into her music.
+                            </p>
+                        </div>
+
+                        <p id="biographyReadMore" class="cursor-pointer font-bold text-gray-800 mt-8 block mb-4">Read more...</p>
                     </div>
-                    <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
+                    <div class="w-full lg:w-4/12 xl:w-4/12 px-4 mr-auto ml-auto mt-16 lg:mt-64">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-purple-500">
                             <img alt="..." src="{{asset('img/professional.jpg')}}" class="w-full align-middle rounded-t-lg"/>
                             <blockquote class="relative p-8 mb-4">
@@ -221,7 +257,13 @@
 
                 </div>
 
-                <div class="flex flex-wrap mt-12 justify-center">
+                <div class="flex flex-wrap pb-6">
+                    <div class="w-full px-4">
+                        <p class="font-bold text-gray-500 text-lg">More videos...</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center">
 
                     <div id="videoCarousel" class="w-full w-12/12 space-x-4 overflow-x-scroll flex justify-between px-4 rail">
 
@@ -243,11 +285,7 @@
 
                 </div>
 
-                <div class="flex flex-wrap pt-12">
-                    <div class="w-full px-4">
-                        <a href="https://www.youtube.com/channel/UCf-Mu_IQF7t78sPrxSFBaHg" target="_blank" class="font-bold text-gray-500 mt-8 text-lg">More videos...</a>
-                    </div>
-                </div>
+
 
             </div>
         </section>
@@ -425,9 +463,11 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar.js')}}"></script>
         <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar-extra.js')}}"></script>
+{{--        end of bootstrap calendar js--}}
+
 
         <script src="{{asset('js/carousel/carousel.js')}}"></script>
-{{--        end of bootstrap calendar js--}}
+        <script src="{{asset('js/biography/biography.js')}}"></script>
         <script>
             function toggleNavbar(collapseID) {
                 document.getElementById(collapseID).classList.toggle("hidden");
