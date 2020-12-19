@@ -29,7 +29,7 @@ function changeVideo(e){
     videoElement.appendChild(text);
 
     videoElement.load();
-    
+
     e.target.classList.add(...nowPlayingClassList);
     videoElement.autoplay = true;
 }

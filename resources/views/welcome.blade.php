@@ -75,8 +75,7 @@
                     </div>
                 </div>
 
-                <a name="about-me"></a>
-                <div class="flex flex-wrap items-center mt-32">
+                <div id="about-me" class="flex flex-wrap items-center mt-32">
                     <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
                         <div class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
                             <i class="fas fa-address-card text-xl"></i>
@@ -116,7 +115,6 @@
             </div>
         </section>
 
-        <a name="images"></a>
         <section class="pb-20 relative block bg-gray-900">
             <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height: 80px; transform: translateZ(0px);">
                 <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
@@ -133,7 +131,7 @@
                     </div>
                 </div>
 
-                <div class="text-gray-600 p-3 mx-4 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
+                <div id="images" class="text-gray-600 p-3 mx-4 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
                     <i class="fas fa-images text-3xl"></i>
                 </div>
 
@@ -196,10 +194,7 @@
 
                 </div>
 
-
-                <a name="videos"></a>
-
-                <div class="text-gray-600 p-3 mx-4 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
+                <div id="videos" class="text-gray-600 p-3 mx-4 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
                     <i class="fas fa-film text-3xl"></i>
                 </div>
 
@@ -233,11 +228,6 @@
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" src="{{asset('img/piano.jpg')}}"/>
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" src="{{asset('img/professional.jpg')}}"/>
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" src="{{asset('img/banner.jpg')}}"/>
-{{--                        <blockquote class="relative mt-4">--}}
-{{--                            <h4 class="text-sm font-bold text-white">--}}
-{{--                                Video 1--}}
-{{--                            </h4>--}}
-{{--                        </blockquote>--}}
 
                     </div>
 
@@ -259,8 +249,6 @@
             </div>
         </section>
 
-
-        <a name="private-lesson"></a>
         <section class="relative py-20">
             <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height: 80px; transform: translateZ(0px);">
                 <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
@@ -274,7 +262,7 @@
                     </div>
                     <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
                         <div class="md:pr-12">
-                            <div class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
+                            <div id="private-lesson" class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
                                 <i class="fas fa-calendar-day text-xl"></i>
                             </div>
                             <h3 class="text-3xl font-semibold">Private lessons</h3>
