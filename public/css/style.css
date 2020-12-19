@@ -5,9 +5,14 @@ html{
     object-fit:contain;
     max-height:75vh;
 }
+.ytVideo{
+    height:75vh;
+    width:100%;
+}
 .rail{
     border-right:1rem solid transparent;
     max-height:25vh;
+
     scroll-behavior: smooth;
 }
 .rail img{

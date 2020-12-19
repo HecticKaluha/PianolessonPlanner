@@ -198,11 +198,16 @@
 
                 <div class="flex flex-wrap mt-12 justify-center">
                     <div class="w-full lg:w-10/12 mb-12 px-4">
+                        @if($currentBrowser == "Safari")
+                            <iframe id="videoElement" class="min-w-full rounded-lg shadow-lg ytVideo" src="https://www.youtube.com/embed/GL2ulyPSngc">
+                            </iframe>
+                        @else
+                            <video id="videoElement" class="w-full max-h-screen min-w-full video rounded-lg shadow-lg" controls>
+                                <source src="{{asset('video/RDWF.mp4')}}" type="video/mp4">
+                                Your browser does not support HTML video.
+                            </video>
+                        @endif
 
-                        <video id="videoElement" class="w-full max-h-screen min-w-full video rounded-lg shadow-lg" controls>
-                            <source src="{{asset('video/RDWF.mp4')}}" type="video/mp4">
-                            Your browser does not support HTML video.
-                        </video>
 
                         <blockquote class="relative mt-4 mb-4">
                             <h4 class="text-xl font-bold text-white">
