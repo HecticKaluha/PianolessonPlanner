@@ -132,7 +132,7 @@
                     </div>
                     <div class="w-full lg:w-4/12 xl:w-4/12 px-4 mr-auto ml-auto mt-16 lg:mt-64">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-purple-500">
-                            <img alt="..." src="{{asset('img/professional.jpg')}}" class="w-full align-middle rounded-t-lg"/>
+                            <img alt="..." src="{{asset('img/biography.jpg')}}" class="w-full align-middle rounded-t-lg"/>
                             <blockquote class="relative p-8 mb-4">
                                 <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
                                     <polygon points="-30,95 583,95 583,65" class="text-purple-500 fill-current"></polygon>
@@ -182,7 +182,7 @@
 
                         <div class="flex flex-wrap justify-center">
                             <div class="w-full md:w-6/12 mt-12 ml-auto mr-auto md:pr-4">
-                                <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                                <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/showcase2.jpg')}}"/>
                                 <blockquote class="relative mt-4">
                                     <h4 class="text-xl font-bold text-white">
                                         Final exam 2.1</h4>
@@ -193,7 +193,7 @@
                             </div>
 
                             <div class="w-full md:w-6/12 mt-12 mb-12 ml-auto mr-auto md:pl-4">
-                                <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
+                                <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/showcase3.png')}}"/>
                                 <blockquote class="relative mt-4">
                                     <h4 class="text-xl font-bold text-white">
                                         Final exam 2.2</h4>
@@ -207,7 +207,7 @@
                     </div>
 
                     <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/banner.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/showcase4.jpeg')}}"/>
                         <blockquote class="relative mt-4 mb-12">
                             <h4 class="text-xl font-bold text-white">
                                 Final exam 4</h4>
@@ -216,7 +216,7 @@
                             </p>
                         </blockquote>
 
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/showcase5.png')}}"/>
                         <blockquote class="relative mt-4 mb-4">
                             <h4 class="text-xl font-bold text-white">
                                 Final exam 5</h4>
@@ -267,8 +267,8 @@
 
                     <div id="videoCarousel" class="w-full w-12/12 space-x-4 overflow-x-scroll flex justify-between px-4 rail">
 
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="https://www.youtube.com/embed/tC2x1i6TB80" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" data-ytsrc="https://www.youtube.com/embed/GL2ulyPSngc" src="{{asset('img/professional.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/thumbnails/sxo.png')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" data-ytsrc="https://www.youtube.com/embed/GL2ulyPSngc" src="{{asset('img/thumbnails/RDWF.png')}}"/>
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/banner.jpg')}}"/>
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/piano.jpg')}}"/>
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" data-ytsrc="" src="{{asset('img/professional.jpg')}}"/>
@@ -298,8 +298,8 @@
             </div>
             <div class="sm:container mx-auto px-4">
                 <div class="items-center flex flex-wrap">
-                    <div class="w-full md:w-4/12 ml-auto mr-auto px-4 mb-6">
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/banner.jpg')}}"/>
+                    <div class="w-full md:w-4/12 ml-auto mr-auto px-4  lg:mt-16 mb-6">
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/private_alt.jpeg')}}"/>
                     </div>
                     <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
                         <div class="md:pr-12">
@@ -319,7 +319,7 @@
                                         </div>
                                         <div>
                                             <h4 class="text-gray-600">
-                                                Carefully crafted components </h4>
+                                                Category 1 </h4>
                                         </div>
                                     </div>
                                 </li>
@@ -329,7 +329,7 @@
                                             <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i class="fab fa-html5"></i></span>
                                         </div>
                                         <div>
-                                            <h4 class="text-gray-600">Amazing page examples</h4>
+                                            <h4 class="text-gray-600">Category 2</h4>
                                         </div>
                                     </div>
                                 </li>
@@ -339,7 +339,7 @@
                                             <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i class="far fa-paper-plane"></i></span>
                                         </div>
                                         <div>
-                                            <h4 class="text-gray-600">Dynamic components</h4>
+                                            <h4 class="text-gray-600">Category 3</h4>
                                         </div>
                                     </div>
                                 </li>
@@ -410,7 +410,7 @@
                     <polygon class="text-gray-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
                 </svg>
             </div>
-            <div class="sm:container mx-auto px-4 lg:pt-24 lg:pb-64">
+            <div class="sm:container mx-auto px-4 pt-12 lg:pt-24 lg:pb-64">
                 <div class="flex flex-wrap text-center justify-center">
                     <div class="w-full lg:w-6/12 px-4">
                         <h2 class="text-4xl font-semibold text-white">Anything left unanswered?</h2>
@@ -423,7 +423,7 @@
         </section>
         <section class="relative block py-24 lg:pt-0 bg-gray-900">
             <div class="sm:container mx-auto px-4">
-                <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
+                <div class="flex flex-wrap justify-center lg:-mt-64 -mt-32">
                     <div class="w-full lg:w-6/12 px-4">
                         <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300">
                             <div class="flex-auto p-5 lg:p-10">
