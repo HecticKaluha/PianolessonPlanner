@@ -27,9 +27,6 @@
 </head>
 <body>
 <div id="page-loader"></div>
-
-@include('components.browser-notice')
-
 @include('layouts.nav')
 
 @if($flash = session('message'))
@@ -39,11 +36,7 @@
     <div id="flash-message" class="alert alert-danger" role="alert">{{$errors->first('error')}}</div>
 @endif
 
-{{--@include('layouts.header')--}}
-
-
 @yield('content')
-
 
 @include('layouts.footer')
 

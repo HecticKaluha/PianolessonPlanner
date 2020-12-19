@@ -1,10 +1,8 @@
 @extends ('layouts.landing')
 
 @section ('content')
-
     @push('style')
         <link rel="stylesheet" href="{{asset('css/bootstrap-calendar/bootstrap-calendar.css')}}">
-{{--        <link rel="stylesheet" href="{{asset('css/bootstrap-calendar-extra.css')}}">--}}
     @endpush
     <main>
         <div class="relative xs:pt-32 pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">

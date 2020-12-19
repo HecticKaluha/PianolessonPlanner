@@ -38,4 +38,5 @@
             </ul>
         </div>
     </div>
+    @include('components.browser-notice')
 </nav>
