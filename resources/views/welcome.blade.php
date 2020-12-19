@@ -225,12 +225,12 @@
 
                     <div id="videoCarousel" class="w-full w-12/12 space-x-4 overflow-x-scroll flex justify-between px-4 rail">
 
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" src="{{asset('img/professional.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" src="{{asset('img/banner.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" src="{{asset('img/professional.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" src="{{asset('img/banner.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="https://www.youtube.com/embed/tC2x1i6TB80" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" data-ytsrc="https://www.youtube.com/embed/GL2ulyPSngc" src="{{asset('img/professional.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/banner.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/piano.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" data-ytsrc="" src="{{asset('img/professional.jpg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/banner.jpg')}}"/>
 
                     </div>
 
@@ -416,6 +416,10 @@
     </main>
 
     @push('scripts')
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+{{--        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>--}}
+
 {{--        bootstrap calendar js--}}
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

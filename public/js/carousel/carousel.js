@@ -18,24 +18,57 @@ for(videoOption of videoCarousel.childNodes){
 }
 
 function changeVideo(e){
-    videoElement.innerHTML = "";
-    var source = document.createElement('source');
-    var text = document.createTextNode('Your browser does not support HTML Video');
-
-    source.setAttribute('src', e.target.dataset.src);
-
     removeClasses();
-    videoElement.appendChild(source);
-    videoElement.appendChild(text);
+    if(checkBrowser() !== "Chrome"){
+        var ytSrc = e.target.dataset.ytsrc;
+        console.log(ytSrc);
+        if(ytSrc !== ""){
+            videoElement.src = ytSrc;
+            e.target.classList.add(...nowPlayingClassList);
+        }
+        else{
+            Swal.fire({
+                title: 'Oops! :(',
+                text: 'This video is not available on Youtube. You can still watch it by viewing the website in Chrome!',
+                icon: 'info',
+                confirmButtonText: 'Great!'
+            })
+        }
+    }
+    else{
+        videoElement.innerHTML = "";
 
-    videoElement.load();
-
-    e.target.classList.add(...nowPlayingClassList);
-    videoElement.autoplay = true;
+        var source = document.createElement('source');
+        var text = document.createTextNode('Your browser does not support HTML Video');
+        source.setAttribute('src', e.target.dataset.src);
+        videoElement.appendChild(source);
+        videoElement.appendChild(text);
+        videoElement.load();
+        videoElement.autoplay = true;
+        e.target.classList.add(...nowPlayingClassList);
+    }
 }
 
 function removeClasses(){
     for(videoOption of videoCarousel.children){
         videoOption.classList.remove(...nowPlayingClassList);
     }
+}
+
+function checkBrowser(){
+    var browsers = ["Chrome", "Firefox", "Safari", "Opera", "MSIE", "Trident", "Edge"];
+    var ie = ["MSIE", "Trident", "Edge"];
+    var currentBrowser = false;
+    var userAgent = navigator.userAgent;
+    for(var i=0; i<browsers.length;i++) {
+        if (userAgent.indexOf(browsers[i]) > -1) {
+            currentBrowser = browsers[i];
+            break;
+        }
+    }
+
+    if(currentBrowser.includes(ie)){
+        currentBrowser = "Internet Explorer, Edge or Trident";
+    }
+    return currentBrowser;
 }
