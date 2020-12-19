@@ -155,7 +155,7 @@
                     <polygon class="text-gray-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
                 </svg>
             </div>
-            <div class="sm:container mx-auto px-4 lg:pt-24 lg:pb-24">
+            <div class="sm:container mx-auto px-4 pt-12 lg:pt-24 lg:pb-24">
                 <div class="flex flex-wrap">
                     <div class="w-full lg:w-12/12 px-4">
                         <h2 class="text-4xl font-semibold text-white">Showcase - My work</h2>
