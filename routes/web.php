@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SlotController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,26 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//normal routes
 Route::get('/', [HomeController::class, 'index']);
 
+
+
+//dashboard routes
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/planning', [SlotController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('planning');
+
+Route::get('/files', function () {
+    return view('files');
+})->middleware(['auth'])->name('files');
+
+Route::get('/blog', function () {
+    return view('blog');
+})->middleware(['auth'])->name('blog');
 
 require __DIR__.'/auth.php';
