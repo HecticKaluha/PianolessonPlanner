@@ -49,7 +49,8 @@ class SlotDataTable extends DataTable
                     ->dom('Bfrtip')
                     ->orderBy(1)
                     ->buttons(
-                        Button::make('create')->action("window.location = '".route('createSlots')."';"),
+                        Button::make('create')->action("window.location = '".route('createSlot')."';"),
+                        Button::raw('<i class="fa fa-plus" aria-hidden="true"></i> Create multiple</span>')->action("window.location = '".route('createSlots')."';"),
                         Button::make('export'),
                         Button::make('print'),
                         Button::make('reset'),
@@ -70,7 +71,6 @@ class SlotDataTable extends DataTable
                   ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
-            Column::make('id'),
             Column::make('startDate'),
             Column::make('endDate'),
             Column::make('category_id'),
