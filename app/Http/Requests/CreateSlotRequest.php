@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Models\Slot;
+use App\Rules\SlotOverlap;
 use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -46,7 +47,7 @@ class CreateSlotRequest extends FormRequest
 
     public function persist()
     {
-
+        $result = ['persisted' => false, 'overlapOccurred' => false];
         $persisted = false;
         $days = request('days');
         $checkDate = Carbon::parse(request('startDate'));
@@ -58,14 +59,19 @@ class CreateSlotRequest extends FormRequest
             if (in_array($checkDate->dayOfWeek, $days)) {
                 $startDate = new Carbon($checkDate->format('Y-m-d') . ' ' . $startTime->format('H:i'));
                 $endDate = new Carbon($checkDate->format('Y-m-d') . ' ' . $endTime->format('H:i'));
-                $slot = Slot::create([
-                    'startDate' => $startDate,
-                    'endDate' => $endDate,
-                ]);
-                $persisted = true;
+                if(Slot::where('startDate', '<=', $startDate)->where('endDate', '>=', $startDate)->count() == 0 && Slot::where('startDate', '<=', $endDate)->where('endDate', '>=', $endDate)->count() == 0){
+                    $slot = Slot::create([
+                        'startDate' => $startDate,
+                        'endDate' => $endDate,
+                    ]);
+                    $result['persisted'] = true;
+                }
+                else{
+                    $result['overlapOccurred'] = true;
+                }
             }
             $checkDate->addDay();
         }
-        return $persisted;
+        return $result;
     }
 }

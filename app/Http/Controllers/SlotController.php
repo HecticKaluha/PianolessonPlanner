@@ -39,10 +39,19 @@ class SlotController extends Controller
      */
     public function store(CreateSlotRequest $form)
     {
-        if ($form->persist()) {
+        $result = $form->persist();
+        if (!$result['overlapOccurred'] && $result['persisted']) {
             session()->flash('message', 'Slot(s) successfully added.');
             return redirect("/slot/create");
-        } else {
+        } else if($result['overlapOccurred'] && $result['persisted']){
+            session()->flash('message', 'Overlapping slots were not created. Other slots were successfully created');
+            return redirect("/slot/create");
+        }
+        else if($result['overlapOccurred'] && !$result['persisted']){
+            session()->flash('message', 'All the slots you were trying to make overlap with existing ones!');
+            return redirect("/slot/create");
+        }
+        else{
             return redirect()->back()->withErrors(array('days' => 'There were no selected days in the time period you selected.'));
         }
     }
