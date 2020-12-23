@@ -14,31 +14,20 @@
             <div class="bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
 
-                    <form class="bootstrap relative overflow"
+                    <form class="bootstrap relative"
                           action="/slot/store"
                           method="post">
                         @csrf
 
-{{--                        select period start--}}
-
-{{--                        select period end--}}
-
-{{--                        select days--}}
-
-{{--                        select starttime--}}
-
-{{--                        select endtime--}}
-
-
                         <div class="inline-flex w-full w-12/12 space-x-4">
                             <div class="form-group w-6/12">
                                 <label class="control-label" for="startDate">Start date</label>
-                                <input class="form-control" data-datepicker id="startDate" name="startDate" placeholder="MM/DD/YYY" type="text"/>
+                                <input class="form-control" data-datePicker id="startDate" name="startDate" placeholder="MM/DD/YYY" type="text"/>
                             </div>
 
                             <div class="form-group w-6/12">
                                 <label class="control-label" for="endDate">End date</label>
-                                <input class="form-control" data-datepicker id="endDate" name="endDate" placeholder="MM/DD/YYY" type="text"/>
+                                <input class="form-control" data-datePicker id="endDate" name="endDate" placeholder="MM/DD/YYY" type="text"/>
                             </div>
                         </div>
 
@@ -55,8 +44,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="inline-flex w-full w-12/12 space-x-4">
                             <div class="form-group w-6/12">
                                 <label class="control-label" for="startTime">Start time</label>
@@ -71,9 +58,7 @@
                         <div class="form-group">
                             <input class="bg-blue-500 cursor-pointer w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit button button-info" value="submit">
                         </div>
-
                     </form>
-
                 </div>
             </div>
         </div>
@@ -114,10 +99,8 @@
                     format:'HH:mm',
                 });
 
-                $('#startDate').datetimepicker(optionsDate);
-                $('#endDate').datetimepicker(optionsDate);
-                $('#startTime').datetimepicker(optionsTime);
-                $('#endTime').datetimepicker(optionsTime);
+                $('input[data-datePicker]').datetimepicker(optionsDate);
+                $('input[data-timePicker]').datetimepicker(optionsTime);
             });
 
         </script>
