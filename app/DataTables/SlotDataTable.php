@@ -66,22 +66,18 @@ class SlotDataTable extends DataTable
     protected function getColumns()
     {
         return [
-//            Column::computed('action')
-//                  ->exportable(false)
-//                  ->printable(false)
-//                  ->width(60)
-//                  ->addClass('text-center'),
-//            Column::make('id'),
-//            Column::make('add your columns'),
-//            Column::make('created_at'),
-//            Column::make('updated_at'),
-            'id',
-            'startDate',
-            'endDate',
-            'category_id',
-            'email',
-            'name',
-            'remarks',
+            Column::computed('action')
+                  ->exportable(true)
+                  ->printable(true)
+                  ->width(60)
+                  ->addClass('text-center'),
+            Column::make('id'),
+            Column::make('startDate'),
+            Column::make('endDate'),
+            Column::make('category_id'),
+            Column::make('email'),
+            Column::make('name'),
+            Column::make('remarks'),
         ];
     }
 
