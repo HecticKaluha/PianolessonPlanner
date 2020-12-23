@@ -21,7 +21,7 @@ class SlotDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'slot.action');
+            ->addColumn('action', 'slots.dtActions');
     }
 
     /**
@@ -49,13 +49,12 @@ class SlotDataTable extends DataTable
                     ->dom('Bfrtip')
                     ->orderBy(1)
                     ->buttons(
-                        Button::make('create'),
+                        Button::make('create')->action("window.location = '".route('createSlots')."';"),
                         Button::make('export'),
                         Button::make('print'),
                         Button::make('reset'),
                         Button::make('reload')
-                    )
-                    ;
+                    );
     }
 
     /**
@@ -67,8 +66,8 @@ class SlotDataTable extends DataTable
     {
         return [
             Column::computed('action')
-                  ->exportable(true)
-                  ->printable(true)
+                  ->exportable(false)
+                  ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
             Column::make('id'),

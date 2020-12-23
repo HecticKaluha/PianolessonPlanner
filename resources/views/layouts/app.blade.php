@@ -16,6 +16,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://kit.fontawesome.com/c33e61f09c.js" crossorigin="anonymous"></script>
         @stack('scripts');
 
 

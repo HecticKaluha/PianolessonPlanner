@@ -36,4 +36,20 @@ Route::get('/blog', function () {
     return view('blog');
 })->middleware(['auth'])->name('blog');
 
+Route::get('/slot/create', [SlotController::class, 'create'])
+    ->middleware(['auth'])
+    ->name('createSlots');
+
+Route::get('/slot/{id}', [SlotController::class, 'create'])
+    ->middleware(['auth'])
+    ->name('viewSlot');
+
+Route::get('/slot/{id}/edit', [SlotController::class, 'create'])
+    ->middleware(['auth'])
+    ->name('editSlot');
+
+Route::get('/slot/{id}/remove', [SlotController::class, 'create'])
+    ->middleware(['auth'])
+    ->name('removeSlot');
+
 require __DIR__.'/auth.php';

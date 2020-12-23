@@ -27,7 +27,7 @@ class SlotController extends Controller
      */
     public function create()
     {
-        //
+        return view('slots.create');
     }
 
     /**
