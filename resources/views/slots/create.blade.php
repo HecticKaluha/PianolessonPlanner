@@ -129,6 +129,13 @@
 
                 $('input[data-datePicker]').datetimepicker(optionsDate);
                 $('input[data-timePicker]').datetimepicker(optionsTime);
+
+                $("#startDate").on("dp.change", function (e) {
+                    $('#endDate').data("DateTimePicker").minDate(e.date);
+                });
+                $("#endDate").on("dp.change", function (e) {
+                    $('#startDate').data("DateTimePicker").maxDate(e.date);
+                });
             });
         </script>
     @endpush
