@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\SlotDataTable;
 use App\Models\Slot;
 use Illuminate\Http\Request;
 
@@ -13,11 +12,10 @@ class SlotController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(SlotDataTable $dataTable)
+    public function index()
     {
-//        $slots = Slot::all();
-//        return view('planning', compact('slots'));
-        return $dataTable->render('planning');
+        $slots = Slot::all();
+        return view('planning', compact('slots'));
     }
 
     /**
