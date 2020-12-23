@@ -44,14 +44,6 @@ Route::post('/slot/store', [SlotController::class, 'store'])
     ->middleware(['auth'])
     ->name('storeSlot');
 
-Route::get('/slot/create/multiple', [SlotController::class, 'create'])
-    ->middleware(['auth'])
-    ->name('createSlots');
-
-Route::post('/slot/store/multiple', [SlotController::class, 'store'])
-    ->middleware(['auth'])
-    ->name('storeSlots');
-
 Route::get('/slot/{id}', [SlotController::class, 'create'])
     ->middleware(['auth'])
     ->name('viewSlot');

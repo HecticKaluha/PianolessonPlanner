@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\SlotDataTable;
+use App\Http\Requests\CreateSlotRequest;
 use App\Models\Slot;
 use Illuminate\Http\Request;
 
@@ -36,9 +37,14 @@ class SlotController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateSlotRequest $form)
     {
-        //
+        if ($form->persist()) {
+            session()->flash('message', 'Slot(s) successfully added.');
+            return redirect("/slot/create");
+        } else {
+            return redirect()->back()->withErrors(array('days' => 'There were no selected days in the time period you selected.'));
+        }
     }
 
     /**

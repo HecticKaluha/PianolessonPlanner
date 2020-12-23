@@ -12,6 +12,16 @@ class Slot extends Model
         'startDate' => 'datetime:Y-m-d H:i',
         'endDate' => 'datetime:Y-m-d H:i',
     ];
+    protected $fillable = [
+        'startDate',
+        'endDate',
+        'startTime',
+        'endTime',
+        'category_id',
+        'email',
+        'name',
+        'remarks',
+    ];
 
     public function category(){
         return $this->belongsTo(Category::class);
