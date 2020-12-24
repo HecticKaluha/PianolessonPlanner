@@ -21,7 +21,13 @@ class SlotDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'slots.dtActions');
+            ->addColumn('action', 'slots.dtActions')
+            ->editColumn('startDate', function ($slot) {
+                return $slot->startDate->format('D, M d, Y - H:i'); // human readable format
+            })
+            ->editColumn('endDate', function ($slot) {
+                return $slot->endDate->format('D, M d, Y - H:i'); // human readable format
+            });
     }
 
     /**
@@ -32,7 +38,7 @@ class SlotDataTable extends DataTable
      */
     public function query(Slot $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with(['category']);
     }
 
     /**
@@ -47,7 +53,7 @@ class SlotDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Bfrtip')
-                    ->orderBy(1)
+                    ->orderBy(1, 'asc')
                     ->buttons(
                         Button::make('create')->action("window.location = '".route('createSlot')."';"),
                         Button::make('export'),
@@ -72,9 +78,9 @@ class SlotDataTable extends DataTable
                   ->addClass('text-center'),
             Column::make('startDate'),
             Column::make('endDate'),
-            Column::make('category_id'),
             Column::make('email'),
             Column::make('name'),
+            'category' => new \Yajra\DataTables\Html\Column(['title' => 'Category', 'data' => 'category.name', 'name' => 'category.name']),
             Column::make('remarks'),
         ];
     }

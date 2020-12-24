@@ -10,6 +10,6 @@ class Category extends Model
     use HasFactory;
 
     public function slots(){
-        return $this->hasMany(Slot::class);
+        return $this->hasMany(Slot::class)->withDefault();
     }
 }
