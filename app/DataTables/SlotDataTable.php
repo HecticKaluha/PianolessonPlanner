@@ -23,10 +23,10 @@ class SlotDataTable extends DataTable
             ->eloquent($query)
             ->addColumn('action', 'slots.dtActions')
             ->editColumn('startDate', function ($slot) {
-                return $slot->startDate->format('D, M d, Y - H:i'); // human readable format
+                return $slot->startDate->format('D, d M, Y');
             })
             ->editColumn('endDate', function ($slot) {
-                return $slot->endDate->format('D, M d, Y - H:i'); // human readable format
+                return $slot->startDate->format('H:i') . ' - ' . $slot->endDate->format('H:i');
             });
     }
 
@@ -76,12 +76,14 @@ class SlotDataTable extends DataTable
                   ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
-            Column::make('startDate'),
-            Column::make('endDate'),
-            Column::make('email'),
-            Column::make('name'),
+            'date' => ['title' => 'Date', 'data' => 'startDate', 'name' => 'startDate'],
+            'time' => ['title' => 'Time', 'data' => 'endDate', 'name' => 'endDate', 'orderable' => false, 'searchable' => false],
+//            Column::make('startDate'),
+//            Column::make('endDate'),
+            'email',
+            'name',
             'category' => new \Yajra\DataTables\Html\Column(['title' => 'Category', 'data' => 'category.name', 'name' => 'category.name']),
-            Column::make('remarks'),
+            'remarks' => ['orderable' => false],
         ];
     }
 
