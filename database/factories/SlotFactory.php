@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Slot;
 use Carbon\Carbon;
+use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SlotFactory extends Factory
@@ -24,12 +25,12 @@ class SlotFactory extends Factory
     {
         $now = Carbon::now();
         $daysFromNow = rand(0, 15);
-        $lessonTime = rand(1, 2);
         $categories = [1,2,3,4,5,6,7,null,null,null,null,null];
         $category = $categories[rand(0, count($categories)-1)];
+        $lessonDay =$now->addDays($daysFromNow);
         return [
-            'startDate' => $now->addDays($daysFromNow),
-            'endDate' => $now->addDays($daysFromNow)->addHours($lessonTime),
+            'startDate' => $lessonDay,
+            'endDate' => Carbon::parse($lessonDay)->addHour(),
             'category_id' => $category,
             'email' => $category === null ? null : $this->faker->email,
             'name' => $category === null ? null : $this->faker->name,
