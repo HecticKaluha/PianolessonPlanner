@@ -56,10 +56,11 @@ class SlotDataTable extends DataTable
                     ->orderBy(1, 'asc')
                     ->buttons(
                         Button::make('create')->action("window.location = '".route('createSlot')."';"),
-                        Button::make('export'),
-                        Button::make('print'),
                         Button::make('reset'),
-                        Button::make('reload')
+                        Button::make('reload'),
+                        Button::make('excel'),
+                        Button::make('csv'),
+                        Button::make('print')
                     );
     }
 
