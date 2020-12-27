@@ -22,11 +22,11 @@ class SlotDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->addColumn('action', 'slots.dtActions')
-            ->editColumn('startDate', function ($slot) {
-                return $slot->startDate->format('D, d M, Y');
+            ->editColumn('date', function ($slot) {
+                return $slot->date->format('D, d M, Y');
             })
-            ->editColumn('endDate', function ($slot) {
-                return $slot->startDate->format('H:i') . ' - ' . $slot->endDate->format('H:i');
+            ->editColumn('startTime', function ($slot) {
+                return $slot->startTime->format('H:i') . ' - ' . $slot->endTime->format('H:i');
             });
     }
 
@@ -77,13 +77,13 @@ class SlotDataTable extends DataTable
                   ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
-            'date' => ['title' => 'Date', 'data' => 'startDate', 'name' => 'startDate'],
-            'time' => ['title' => 'Time', 'data' => 'endDate', 'name' => 'endDate', 'orderable' => false, 'searchable' => false],
+            'date' => ['title' => 'Date', 'data' => 'date', 'name' => 'date'],
+            'time' => ['title' => 'Time', 'data' => 'startTime', 'name' => 'startTime', 'orderable' => false, 'searchable' => false],
 //            Column::make('startDate'),
 //            Column::make('endDate'),
-            'email',
             'name',
-            'category' => new \Yajra\DataTables\Html\Column(['title' => 'Category', 'data' => 'category.name', 'name' => 'category.name']),
+            'email',
+            'category' => ['title' => 'Category', 'data' => 'category.name', 'name' => 'category.name'],
             'remarks' => ['orderable' => false],
         ];
     }

@@ -29,8 +29,9 @@ class SlotFactory extends Factory
         $category = $categories[rand(0, count($categories)-1)];
         $lessonDay =$now->addDays($daysFromNow);
         return [
-            'startDate' => $lessonDay,
-            'endDate' => Carbon::parse($lessonDay)->addHour(),
+            'date' => $lessonDay,
+            'startTime' => Carbon::parse($lessonDay),
+            'endTime' => Carbon::parse($lessonDay)->addHour(),
             'category_id' => $category,
             'email' => $category === null ? null : $this->faker->email,
             'name' => $category === null ? null : $this->faker->name,

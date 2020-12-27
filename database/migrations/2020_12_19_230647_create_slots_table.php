@@ -15,8 +15,9 @@ class CreateSlotsTable extends Migration
     {
         Schema::create('slots', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('startDate');
-            $table->dateTime('endDate');
+            $table->date('date');
+            $table->time('startTime');
+            $table->time('endTime');
             $table->unsignedBigInteger('category_id')->nullable();
             $table->string('email')->nullable();
             $table->string('name')->nullable();

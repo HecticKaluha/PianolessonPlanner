@@ -9,12 +9,12 @@ class Slot extends Model
 {
     use HasFactory;
     protected $casts = [
-        'startDate' => 'datetime:Y-m-d H:i',
-        'endDate' => 'datetime:Y-m-d H:i',
+        'date' => 'datetime:Y-m-d',
+        'startTime' => 'datetime:H:i',
+        'endTime' => 'datetime:H:i',
     ];
     protected $fillable = [
-        'startDate',
-        'endDate',
+        'date',
         'startTime',
         'endTime',
         'category_id',

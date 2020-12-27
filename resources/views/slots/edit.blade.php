@@ -6,7 +6,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Make slots') }}
+            {{ __('Edit slots') }}
         </h2>
     </x-slot>
 
@@ -14,57 +14,28 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-
                     <form class="bootstrap relative"
-                          action="{{url('/slot/store')}}"
+                          action="{{route('updateSlot', ['slot' => $slot->id])}}"
                           method="post">
                         @csrf
 
                         <div class="inline-flex w-full w-12/12 space-x-4">
-                            <div class="form-group w-6/12">
-                                <label class="control-label" for="startDate">Start date</label>
-                                <input class="form-control" data-datePicker id="startDate" name="startDate" placeholder="MM-DD-YYYY" type="text"/>
-                                @if ($errors->has('startDate'))
+                            <div class="form-group w-12/12 w-full">
+                                <label class="control-label" for="date">Date</label>
+                                <input class="form-control" data-datePicker id="date" name="date" value="{{$slot->date->format('d/m/Y')}}" placeholder="MM-DD-YYYY" type="text"/>
+                                @if ($errors->has('date'))
                                     <span class="text-red-500" role="alert">
-                                        <strong>{{ $errors->first('startDate') }}</strong>
+                                        <strong>{{ $errors->first('date') }}</strong>
                                     </span>
                                 @endif
                             </div>
-
-                            <div class="form-group w-6/12">
-                                <label class="control-label" for="endDate">End date</label>
-                                <input class="form-control" data-datePicker id="endDate" name="endDate" placeholder="MM-DD-YYYY" type="text"/>
-                                @if ($errors->has('endDate'))
-                                    <span class="text-red-500" role="alert">
-                                        <strong>{{ $errors->first('endDate') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="" for="days">Select days</label>
-                            <div>
-                                <input type="checkbox" name="days[]" value="1"> Monday
-                                <input type="checkbox" name="days[]" value="2"> Tuesday
-                                <input type="checkbox" name="days[]" value="3"> Wednesday
-                                <input type="checkbox" name="days[]" value="4"> Thursday
-                                <input type="checkbox" name="days[]" value="5"> Friday
-                                <input type="checkbox" name="days[]" value="6"> Saturday
-                                <input type="checkbox" name="days[]" value="0"> Sunday
-                            </div>
-                            @if ($errors->has('days'))
-                                <span class="text-red-500" role="alert">
-                                        <strong>{{ $errors->first('days') }}</strong>
-                                    </span>
-                            @endif
                         </div>
 
 
                         <div class="inline-flex w-full w-12/12 space-x-4">
                             <div class="form-group w-6/12">
                                 <label class="control-label" for="startTime">Start time</label>
-                                <input class="form-control" data-timePicker id="startTime" name="startTime" placeholder="HH:MM" type="text"/>
+                                <input class="form-control" data-timePicker id="startTime" name="startTime" value="{{$slot->startTime->format('H:i')}}" placeholder="HH:MM" type="text"/>
                                 @if ($errors->has('startTime'))
                                     <span class="text-red-500" role="alert">
                                         <strong>{{ $errors->first('startTime') }}</strong>
@@ -73,13 +44,61 @@
                             </div>
                             <div class="form-group w-6/12">
                                 <label class="control-label" for="endTime">End time</label>
-                                <input class="form-control" data-timePicker id="endTime" name="endTime" placeholder="HH:MM" type="text"/>
+                                <input class="form-control" data-timePicker id="endTime" name="endTime" value="{{$slot->endTime->format('H:i')}}"placeholder="HH:MM" type="text"/>
                                 @if ($errors->has('endTime'))
                                     <span class="text-red-500" role="alert">
                                         <strong>{{ $errors->first('endTime') }}</strong>
                                     </span>
                                 @endif
                             </div>
+                        </div>
+
+                        <div class="form-group w-12/12 w-full">
+                            <label class="control-label" for="category">Category</label>
+                            <select class="form-control" name="category" id="category">
+                                <option value="null" {{$slot->category->id == null ? 'selected' : ''}} > - none selected - </option>
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}" {{$slot->category->id == $category->id ? 'selected' : ''}} >{{$category->name}}</option>
+                                @endforeach
+                            </select>
+                            @if ($errors->has('category'))
+                                <span class="text-red-500" role="alert">
+                                    <strong>{{ $errors->first('category') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
+                        <div class="inline-flex w-full w-12/12 space-x-4">
+                            <div class="form-group w-12/12 w-full">
+                                <label class="control-label" for="name">Name</label>
+                                <input class="form-control" name="name" id="name" placeholder="Name" value="{{$slot->name}}" type="text">
+                                @if ($errors->has('name'))
+                                    <span class="text-red-500" role="alert">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group w-12/12 w-full">
+                                <label class="control-label" for="email">E-mail</label>
+                                <input class="form-control" name="email" id="email" placeholder="E-mail" value="{{$slot->email}}" type="text">
+                                @if ($errors->has('email'))
+                                    <span class="text-red-500" role="alert">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group w-12/12 w-full">
+                            <label class="control-label" for="remarks">Remarks</label>
+                            <textarea class="form-control" name="remarks" id="remarks" placeholder="Remarks" rows="8">{{$slot->remarks}}</textarea>
+
+                            @if ($errors->has('remarks'))
+                                <span class="text-red-500" role="alert">
+                                    <strong>{{ $errors->first('remarks') }}</strong>
+                                </span>
+                            @endif
                         </div>
 
                         <div class="form-group">
@@ -130,13 +149,6 @@
 
                 $('input[data-datePicker]').datetimepicker(optionsDate);
                 $('input[data-timePicker]').datetimepicker(optionsTime);
-
-                $("#startDate").on("dp.change", function (e) {
-                    $('#endDate').data("DateTimePicker").minDate(e.date);
-                });
-                $("#endDate").on("dp.change", function (e) {
-                    $('#startDate').data("DateTimePicker").maxDate(e.date);
-                });
             });
         </script>
     @endpush

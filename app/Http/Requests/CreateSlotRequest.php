@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use App\Models\Slot;
-use App\Rules\SlotOverlap;
 use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -28,10 +27,10 @@ class CreateSlotRequest extends FormRequest
     {
         return [
             'days' => 'required',
-            'startDate' => 'required',
+            'startDate' => 'required|before:endDate',
             'endDate' => 'required|after:startDate',
 
-            'startTime' => 'required',
+            'startTime' => 'required|before:endTime',
             'endTime' => 'required|after:startTime',
         ];
     }
@@ -40,15 +39,16 @@ class CreateSlotRequest extends FormRequest
     {
         return [
             '*.required' => 'The :attribute field is required',
-            'endDate.after' => 'De end date should be after the start date',
-            'endTime.after' => 'De end time should be after the start time',
+            'startDate.before' => 'The start date should be before the end date',
+            'endDate.after' => 'The end date should be after the start date',
+            'startTime.before' => 'The start time should be before the end time',
+            'endTime.after' => 'The end time should be after the start time',
         ];
     }
 
     public function persist()
     {
         $result = ['persisted' => false, 'overlapOccurred' => false];
-        $persisted = false;
         $days = request('days');
         $checkDate = Carbon::parse(request('startDate'));
         $periodEndDate = Carbon::parse(request('endDate'));
@@ -57,12 +57,11 @@ class CreateSlotRequest extends FormRequest
 
         while ($checkDate <= $periodEndDate) {
             if (in_array($checkDate->dayOfWeek, $days)) {
-                $startDate = new Carbon($checkDate->format('Y-m-d') . ' ' . $startTime->format('H:i'));
-                $endDate = new Carbon($checkDate->format('Y-m-d') . ' ' . $endTime->format('H:i'));
-                if(Slot::where('startDate', '<=', $startDate)->where('endDate', '>=', $startDate)->count() == 0 && Slot::where('startDate', '<=', $endDate)->where('endDate', '>=', $endDate)->count() == 0){
+                if(Slot::where('date', '=', $checkDate)->where('startTime', '<=', $startTime)->where('endTime', '>=', $startTime)->count() == 0 && Slot::where('date', '=', $checkDate)->where('startTime', '<=', $endTime)->where('endTime', '>=', $endTime)->count() == 0){
                     $slot = Slot::create([
-                        'startDate' => $startDate,
-                        'endDate' => $endDate,
+                        'date' => $checkDate,
+                        'startTime' => $startTime,
+                        'endTime' => $endTime,
                     ]);
                     $result['persisted'] = true;
                 }

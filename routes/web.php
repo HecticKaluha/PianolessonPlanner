@@ -44,15 +44,19 @@ Route::post('/slot/store', [SlotController::class, 'store'])
     ->middleware(['auth'])
     ->name('storeSlot');
 
-Route::get('/slot/{id}', [SlotController::class, 'create'])
+Route::get('/slot/{slot}', [SlotController::class, 'show'])
     ->middleware(['auth'])
     ->name('viewSlot');
 
-Route::get('/slot/{id}/edit', [SlotController::class, 'create'])
+Route::get('/slot/{slot}/edit', [SlotController::class, 'edit'])
     ->middleware(['auth'])
     ->name('editSlot');
 
-Route::get('/slot/{id}/remove', [SlotController::class, 'create'])
+Route::post('/slot/{slot}/update', [SlotController::class, 'update'])
+    ->middleware(['auth'])
+    ->name('updateSlot');
+
+Route::post('/slot/{slot}/remove', [SlotController::class, 'create'])
     ->middleware(['auth'])
     ->name('removeSlot');
 

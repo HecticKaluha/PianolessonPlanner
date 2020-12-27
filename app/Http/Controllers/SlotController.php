@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\DataTables\SlotDataTable;
 use App\Http\Requests\CreateSlotRequest;
+use App\Http\Requests\UpdateSlotRequest;
+use App\Models\Category;
 use App\Models\Slot;
 use Illuminate\Http\Request;
 
@@ -75,19 +77,28 @@ class SlotController extends Controller
      */
     public function edit(Slot $slot)
     {
-        //
+        $categories = Category::all();
+        return view('slots.edit',compact('slot', 'categories'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  $form
      * @param  \App\Models\Slot  $slot
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Slot $slot)
+    public function update(UpdateSlotRequest $form, Slot $slot)
     {
-        //
+        $result = $form->patch($slot);
+        if ($result) {
+            session()->flash('message', 'Slot successfully changed.');
+            return redirect("/planning");
+        }
+        else{
+            session()->flash('message', 'The selected time overlaps with an existing slot.');
+            return redirect()->back()->withErrors(array('startTime' => 'The selected time overlaps with an existing slot.'));
+        }
     }
 
     /**
