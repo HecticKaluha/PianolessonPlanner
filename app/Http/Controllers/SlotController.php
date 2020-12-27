@@ -66,7 +66,7 @@ class SlotController extends Controller
      */
     public function show(Slot $slot)
     {
-        //
+        return view('slots.show', compact('slot'));
     }
 
     /**

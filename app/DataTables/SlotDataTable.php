@@ -81,9 +81,9 @@ class SlotDataTable extends DataTable
             'time' => ['title' => 'Time', 'data' => 'startTime', 'name' => 'startTime', 'orderable' => false, 'searchable' => false],
 //            Column::make('startDate'),
 //            Column::make('endDate'),
-            'name',
-            'email',
-            'category' => ['title' => 'Category', 'data' => 'category.name', 'name' => 'category.name'],
+            'name' => [ 'orderable' => false],
+            'email' => [ 'orderable' => false],
+            'category' => ['title' => 'Category', 'data' => 'category.name', 'name' => 'category.name', 'orderable' => false],
             'remarks' => ['orderable' => false],
         ];
     }
