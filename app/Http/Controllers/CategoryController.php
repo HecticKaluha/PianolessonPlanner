@@ -82,4 +82,8 @@ class CategoryController extends Controller
     {
         //
     }
+
+    public function getAll(){
+        return response()->json(Category::all());
+    }
 }

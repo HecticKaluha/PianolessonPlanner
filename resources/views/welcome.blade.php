@@ -466,6 +466,32 @@
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js"></script>
 
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                //get the categories
+                let url = '{{route('getAll')}}';
+                fetch(url, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json, text-plain, */*",
+                        "X-Requested-With": "XMLHttpRequest",
+                    },
+                    method: 'get',
+                    credentials: "same-origin"
+                }).then(function(response){
+                    return response.json();
+                }).then(function(data){
+                    data.forEach(function(value){
+                        console.log(value);
+                        var opt = document.createElement('option');
+                        opt.setAttribute('value', value.id);
+                        opt.innerText = value.name;
+                        category.appendChild(opt);
+                    });
+                });
+            });
+        </script>
+
+        <script>
 {{--    load events then load calendar--}}
             var events = [
                 {
@@ -480,6 +506,7 @@
                     allDay : false // will make the time show
                 }
             ]
+
             document.addEventListener('DOMContentLoaded', function() {
                 var calendarEl = document.getElementById('calendar');
                 var calendar = new FullCalendar.Calendar(calendarEl, {
