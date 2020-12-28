@@ -2,7 +2,9 @@
 
 @section ('content')
     @push('style')
-        <link rel="stylesheet" href="{{asset('css/bootstrap-calendar/bootstrap-calendar.css')}}">
+{{--        <link rel="stylesheet" href="{{asset('css/bootstrap-calendar/bootstrap-calendar.css')}}">--}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css">
+{{--        <link rel="stylesheet" href="{{asset('css/bootstrap-calendar/bootstrap-calendar-extra.css')}}">--}}
     @endpush
     <main>
         <div class="relative xs:pt-32 pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
@@ -391,9 +393,7 @@
                             <div class=" text-center">
                                 <div class="mt-6">
 {{--                                    Bootstrap calendar--}}
-                                    <div id='wrap'>
-                                        <div id='calendar'></div>
-                                        <div style='clear:both'></div>
+                                    <div id='calendar'>
                                     </div>
 {{--                                    End of Bootstrap calendar--}}
 
@@ -451,6 +451,8 @@
                 </div>
             </div>
         </section>
+{{--        get categories then load modal--}}
+        @include('components.modals.bookEventModal');
     </main>
 
     @push('scripts')
@@ -461,8 +463,48 @@
 {{--        bootstrap calendar js--}}
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar.js')}}"></script>
-        <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar-extra.js')}}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js"></script>
+
+        <script>
+{{--    load events then load calendar--}}
+            var events = [
+                {
+                    title  : 'event3',
+                    start  : '2020-12-28T12:30:00',
+                    allDay : false, // will make the time show
+                    customThing : "new thing", // will make the time show
+                },
+                {
+                    title  : 'event3',
+                    start  : '2020-12-28T12:30:00',
+                    allDay : false // will make the time show
+                }
+            ]
+            document.addEventListener('DOMContentLoaded', function() {
+                var calendarEl = document.getElementById('calendar');
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+                    eventDisplay: 'block',
+                    events: events,
+                    height: 'auto',
+                    eventDidMount: function(custom){
+                        custom.el.classList.add('bg-green-500', 'cursor-pointer');
+                    },
+
+                    //Activating modal for 'when an event is clicked'
+                    eventClick: function (event) {
+                        console.log(event);
+                        openModal();
+                    },
+                });
+                calendar.render();
+            });
+        </script>
+        <script src="{{asset('js/calendar/calendar.js')}}"></script>
+
+
+{{--        <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar.js')}}"></script>--}}
+{{--        <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar-extra.js')}}"></script>--}}
 {{--        end of bootstrap calendar js--}}
 
 
