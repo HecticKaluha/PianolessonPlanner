@@ -56,8 +56,12 @@ Route::post('/slot/{slot}/update', [SlotController::class, 'update'])
     ->middleware(['auth'])
     ->name('updateSlot');
 
-Route::post('/slot/{slot}/remove', [SlotController::class, 'create'])
+Route::get('/slot/{slot}/remove', [SlotController::class, 'remove'])
     ->middleware(['auth'])
     ->name('removeSlot');
+
+Route::post('/slot/{slot}/destroy', [SlotController::class, 'destroy'])
+    ->middleware(['auth'])
+    ->name('destroySlot');
 
 require __DIR__.'/auth.php';

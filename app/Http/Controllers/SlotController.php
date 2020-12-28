@@ -50,8 +50,7 @@ class SlotController extends Controller
             return redirect("/slot/create");
         }
         else if($result['overlapOccurred'] && !$result['persisted']){
-            session()->flash('message', 'All the slots you were trying to make overlap with existing ones!');
-            return redirect("/slot/create");
+            return redirect("/slot/create")->withErrors(array('error' => 'All the slots you were trying to make overlap with existing ones!'));
         }
         else{
             return redirect()->back()->withErrors(array('days' => 'There were no selected days in the time period you selected.'));
@@ -101,6 +100,10 @@ class SlotController extends Controller
         }
     }
 
+    public function remove(Slot $slot){
+        return view('slots.remove', compact('slot'));
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -109,6 +112,8 @@ class SlotController extends Controller
      */
     public function destroy(Slot $slot)
     {
-        //
+        $slot->delete();
+        session()->flash('message', 'Slot successfully deleted.');
+        return redirect("/planning");
     }
 }

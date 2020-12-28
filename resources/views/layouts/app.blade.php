@@ -42,10 +42,10 @@
                 {{ $slot }}
             </main>
             @if($flash = session('message'))
-                <div id="flash-message" class="alert alert-success absolute right-5 bottom-1" role="alert">{{$flash}}</div>
+                <div id="flash-message" class="alert alert-success bg-green-500 absolute right-5 bottom-1" role="alert">{{$flash}}</div>
             @endif
             @if($errors->has('error'))
-                <div id="flash-message" class="alert alert-danger absolute right-5 bottom-1" role="alert">{{$errors->first('error')}}</div>
+                <div id="flash-message" class="alert alert-danger bg-red-500 absolute right-5 bottom-1" role="alert">{{$errors->first('error')}}</div>
             @endif
         </div>
 
