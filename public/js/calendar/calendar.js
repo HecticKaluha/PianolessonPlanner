@@ -29,12 +29,15 @@ function bookEvent() {
         return response.json();
     }).then((data) => {
         console.log(data);
+        
+        calendar.removeAllEvents();
+        calendar.refetchEvents();
     })
     .catch(function (error) {
         console.log(error);
     });
-
     closeModal();
+
 }
 
 function openModal(slot) {

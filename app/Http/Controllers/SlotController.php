@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Slot;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Throwable;
 
 class SlotController extends Controller
 {
@@ -125,30 +126,43 @@ class SlotController extends Controller
 
     public function bookSlot(Request $request){
 
-        $message = $request->get('name');
-//        $slot = Slot::get($request->get('slotId'));
-
         $response = [
             'success' => false,
+            'exception' => false,
+            'exceptionMessage' => '',
             'message' => '',
             'errors' => '',
         ];
 
         $rules = [
-            'slotId' => 'required',
+            'slotId' => 'required|exists:slots,id',
             'name' => 'required',
-            'email' => 'required',
-            'category_id' => 'required',
-            'remarks' => 'required',
+            'email' => 'required|email',
+            'category_id' => 'required|exists:categories,id',
+            'remarks' => '',
         ];
 
         $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            $response['success'] = false;
-            $response['errors'] = $validator->messages();
+        if (!$validator->fails()) {
+            try{
+                $slot = Slot::find($request->get('slotId'));
+                $slot->name = $request->get('name');
+                $slot->email = $request->get('email');
+                $slot->remarks = $request->get('remarks');
+                $slot->category_id = $request->get('category_id');
+                $slot->save();
+
+                $response['success'] = true;
+                $response['message'] = 'Successfully booked!';
+            }
+            catch(Throwable $e){
+                $response['message'] = 'There was an error when processing your booking. Try again later.';
+                $response['exception'] = true;
+                $response['exceptionMessage'] = [$e->getMessage()];
+            }
         }else{
-            $response['success'] = false;
-            $response['message'] = 'gelukt';
+            $response['message'] = 'There was something wrong with the data you entered.';
+            $response['errors'] = $validator->messages();
         }
         return $response;
     }

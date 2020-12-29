@@ -465,14 +465,15 @@
 
 {{--        bootstrap calendar js--}}
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{{--        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--}}
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js"></script>
-        <script src="{{asset('js/calendar/calendar.js')}}"></script>
 
         <script>
             let bookSlotUrl = '{{route('bookSlot')}}';
             let categoriesUrl = '{{route('getAllCategories')}}';
             let slotsUrl = '{{route('getAllSlots')}}';
+            var calendar;
+            var calendarEl;
             document.addEventListener('DOMContentLoaded', function() {
                 //get the categories
                 fetch(categoriesUrl, {
@@ -511,24 +512,34 @@
             }).then(function(response){
                 return response.json();
             }).then(function(data){
-                data.data.forEach(function(value){
-                    events.push(
-                        {
-                            title: '',
-                            start: value.date + 'T' + value.startTime,
-                            end: value.date + 'T' + value.endTime,
-                            allDay: false,
-                            customId: value.id,
-                            customBooked: value.booked
-                        }
-                    );
-                });
+
             }).then(function(){
-                var calendarEl = document.getElementById('calendar');
-                var calendar = new FullCalendar.Calendar(calendarEl, {
+                calendarEl = document.getElementById('calendar');
+                calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'dayGridMonth',
                     eventDisplay: 'block',
-                    events: events,
+                    // events: events,
+                    eventSources: [
+                        {
+                            url:slotsUrl,
+                        }
+                    ],
+                    eventSourceSuccess: function(content, xhr) {
+                        events = [];
+                        content.data.forEach(function(value){
+                            events.push(
+                                {
+                                    title: '',
+                                    start: value.date + 'T' + value.startTime,
+                                    end: value.date + 'T' + value.endTime,
+                                    allDay: false,
+                                    customId: value.id,
+                                    customBooked: value.booked
+                                }
+                            );
+                        });
+                        return events;
+                    },
                     height: 'auto',
                     eventDidMount: function(custom){
                         if(custom.event.extendedProps.customBooked){
@@ -552,6 +563,7 @@
             });
             });
         </script>
+        <script src="{{asset('js/calendar/calendar.js')}}"></script>
 
         <script src="{{asset('js/carousel/carousel.js')}}"></script>
         <script src="{{asset('js/biography/biography.js')}}"></script>
