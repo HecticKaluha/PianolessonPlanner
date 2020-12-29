@@ -1,6 +1,9 @@
 @extends ('layouts.landing')
 
 @section ('content')
+    @push('token')
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+    @endpush
     @push('style')
 {{--        <link rel="stylesheet" href="{{asset('css/bootstrap-calendar/bootstrap-calendar.css')}}">--}}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css">
@@ -452,7 +455,7 @@
             </div>
         </section>
 {{--        get categories then load modal--}}
-        @include('components.modals.bookEventModal');
+        @include('components.modals.bookSlotModal');
     </main>
 
     @push('scripts')
@@ -464,11 +467,14 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js"></script>
+        <script src="{{asset('js/calendar/calendar.js')}}"></script>
 
         <script>
+            let bookSlotUrl = '{{route('bookSlot')}}';
+            let categoriesUrl = '{{route('getAllCategories')}}';
+            let slotsUrl = '{{route('getAllSlots')}}';
             document.addEventListener('DOMContentLoaded', function() {
                 //get the categories
-                let categoriesUrl = '{{route('getAllCategories')}}';
                 fetch(categoriesUrl, {
                     headers: {
                         "Content-Type": "application/json",
@@ -494,8 +500,6 @@
 {{--    load events then load calendar--}}
             var events = [];
             document.addEventListener('DOMContentLoaded', function() {
-            let slotsUrl = '{{route('getAllSlots')}}';
-
             fetch(slotsUrl, {
                 headers: {
                     "Content-Type": "application/json",
@@ -548,7 +552,6 @@
             });
             });
         </script>
-        <script src="{{asset('js/calendar/calendar.js')}}"></script>
 
         <script src="{{asset('js/carousel/carousel.js')}}"></script>
         <script src="{{asset('js/biography/biography.js')}}"></script>

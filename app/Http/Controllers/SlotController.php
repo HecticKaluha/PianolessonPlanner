@@ -9,6 +9,7 @@ use App\Http\Resources\SlotResource;
 use App\Models\Category;
 use App\Models\Slot;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SlotController extends Controller
 {
@@ -120,5 +121,35 @@ class SlotController extends Controller
 
     public function getAll(){
         return SlotResource::collection(Slot::all());
+    }
+
+    public function bookSlot(Request $request){
+
+        $message = $request->get('name');
+//        $slot = Slot::get($request->get('slotId'));
+
+        $response = [
+            'success' => false,
+            'message' => '',
+            'errors' => '',
+        ];
+
+        $rules = [
+            'slotId' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'category_id' => 'required',
+            'remarks' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            $response['success'] = false;
+            $response['errors'] = $validator->messages();
+        }else{
+            $response['success'] = false;
+            $response['message'] = 'gelukt';
+        }
+        return $response;
     }
 }

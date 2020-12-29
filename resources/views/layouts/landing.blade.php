@@ -3,6 +3,7 @@
 <!--[if gt IE 9]><!--><html class="no-focus" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
+    @stack('token')
 
     <title>Pianoplanning</title>
 

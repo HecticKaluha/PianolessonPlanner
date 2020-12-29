@@ -26,3 +26,6 @@ Route::get('/api/categories', [CategoryController::class, 'getAll'])
 Route::get('/api/slots', [SlotController::class, 'getAll'])
     ->name('getAllSlots');
 
+Route::post('/api/bookSlot', [SlotController::class, 'bookSlot'])
+    ->name('bookSlot');
+
