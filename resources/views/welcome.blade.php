@@ -468,8 +468,8 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 //get the categories
-                let url = '{{route('getAll')}}';
-                fetch(url, {
+                let categoriesUrl = '{{route('getAllCategories')}}';
+                fetch(categoriesUrl, {
                     headers: {
                         "Content-Type": "application/json",
                         "Accept": "application/json, text-plain, */*",
@@ -481,7 +481,6 @@
                     return response.json();
                 }).then(function(data){
                     data.forEach(function(value){
-                        console.log(value);
                         var opt = document.createElement('option');
                         opt.setAttribute('value', value.id);
                         opt.innerText = value.name;
@@ -493,21 +492,35 @@
 
         <script>
 {{--    load events then load calendar--}}
-            var events = [
-                {
-                    title  : 'event3',
-                    start  : '2020-12-28T12:30:00',
-                    allDay : false, // will make the time show
-                    customThing : "new thing", // will make the time show
-                },
-                {
-                    title  : 'event3',
-                    start  : '2020-12-28T12:30:00',
-                    allDay : false // will make the time show
-                }
-            ]
-
+            var events = [];
             document.addEventListener('DOMContentLoaded', function() {
+            let slotsUrl = '{{route('getAllSlots')}}';
+
+            fetch(slotsUrl, {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json, text-plain, */*",
+                    "X-Requested-With": "XMLHttpRequest",
+                },
+                method: 'get',
+                credentials: "same-origin"
+            }).then(function(response){
+                return response.json();
+            }).then(function(data){
+                console.log(data);
+                data.forEach(function(value){
+                    events.push(
+                        {
+                            title: value.date,
+                            start: value.date + 'T' + value.startTime,
+                            end: value.date + 'T' + value.endTime,
+                            allDay: false,
+                            customId: value.id
+                        }
+                    );
+                });
+            }).then(function(){
+                console.log(events);
                 var calendarEl = document.getElementById('calendar');
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'dayGridMonth',
@@ -526,14 +539,9 @@
                 });
                 calendar.render();
             });
+            });
         </script>
         <script src="{{asset('js/calendar/calendar.js')}}"></script>
-
-
-{{--        <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar.js')}}"></script>--}}
-{{--        <script src="{{asset('js/bootstrap-calendar/bootstrap-calendar-extra.js')}}"></script>--}}
-{{--        end of bootstrap calendar js--}}
-
 
         <script src="{{asset('js/carousel/carousel.js')}}"></script>
         <script src="{{asset('js/biography/biography.js')}}"></script>

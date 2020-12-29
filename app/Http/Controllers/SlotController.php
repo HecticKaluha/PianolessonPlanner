@@ -116,4 +116,8 @@ class SlotController extends Controller
         session()->flash('message', 'Slot successfully deleted.');
         return redirect("/planning");
     }
+
+    public function getAll(){
+        return response()->json(Slot::all());
+    }
 }

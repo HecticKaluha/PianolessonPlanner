@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SlotController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/categories', [CategoryController::class, 'getAll'])
-    ->name('getAll');
+Route::get('/api/categories', [CategoryController::class, 'getAll'])
+    ->name('getAllCategories');
+
+Route::get('/api/slots', [SlotController::class, 'getAll'])
+    ->name('getAllSlots');
 
