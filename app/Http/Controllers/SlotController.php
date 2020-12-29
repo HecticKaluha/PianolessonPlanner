@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTables\SlotDataTable;
 use App\Http\Requests\CreateSlotRequest;
 use App\Http\Requests\UpdateSlotRequest;
+use App\Http\Resources\SlotResource;
 use App\Models\Category;
 use App\Models\Slot;
 use Illuminate\Http\Request;
@@ -118,6 +119,6 @@ class SlotController extends Controller
     }
 
     public function getAll(){
-        return response()->json(Slot::all());
+        return SlotResource::collection(Slot::all());
     }
 }

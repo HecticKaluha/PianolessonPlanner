@@ -480,7 +480,7 @@
                 }).then(function(response){
                     return response.json();
                 }).then(function(data){
-                    data.forEach(function(value){
+                    data.data.forEach(function(value){
                         var opt = document.createElement('option');
                         opt.setAttribute('value', value.id);
                         opt.innerText = value.name;
@@ -507,20 +507,19 @@
             }).then(function(response){
                 return response.json();
             }).then(function(data){
-                console.log(data);
-                data.forEach(function(value){
+                data.data.forEach(function(value){
                     events.push(
                         {
-                            title: value.date,
+                            title: '',
                             start: value.date + 'T' + value.startTime,
                             end: value.date + 'T' + value.endTime,
                             allDay: false,
-                            customId: value.id
+                            customId: value.id,
+                            customBooked: value.booked
                         }
                     );
                 });
             }).then(function(){
-                console.log(events);
                 var calendarEl = document.getElementById('calendar');
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'dayGridMonth',
@@ -528,14 +527,22 @@
                     events: events,
                     height: 'auto',
                     eventDidMount: function(custom){
-                        custom.el.classList.add('bg-green-500', 'cursor-pointer');
+                        if(custom.event.extendedProps.customBooked){
+                            custom.el.classList.add('bg-red-500');
+                        }
+                        else{
+                            custom.el.classList.add('bg-green-500', 'cursor-pointer');
+                            custom.el.onclick = function(){
+                                openModal(custom.event);
+                            };
+                        }
                     },
 
                     //Activating modal for 'when an event is clicked'
-                    eventClick: function (event) {
-                        console.log(event);
-                        openModal();
-                    },
+                    // eventClick: function (event) {
+                    //     console.log(event);
+                    //     openModal();
+                    // },
                 });
                 calendar.render();
             });
