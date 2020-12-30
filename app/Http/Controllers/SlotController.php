@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateSlotRequest;
 use App\Http\Resources\SlotResource;
 use App\Models\Category;
 use App\Models\Slot;
+use App\Rules\SlotNotBooked;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Throwable;
@@ -135,7 +136,7 @@ class SlotController extends Controller
         ];
 
         $rules = [
-            'slotId' => 'required|exists:slots,id',
+            'slotId' => ['required','exists:slots,id', new SlotNotBooked()],
             'name' => 'required',
             'email' => 'required|email',
             'category_id' => 'required|exists:categories,id',

@@ -4,7 +4,7 @@ function closeModal() {
 }
 
 function bookEvent() {
-    clearFields();
+    clearFields(['nameError', 'emailError', 'category_idError']);
     let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     var body = {
         slotId: slotId.getAttribute('value'),
@@ -42,13 +42,25 @@ function bookEvent() {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: data.exceptionMessage,
+                text: data.exceptionMessage ? data.exceptionMessage : 'Some code seems to be broken...',
                 footer: 'Contact the developer.'
             })
         }
         else{
             for(property in data.errors){
-                document.getElementById(property+'Error').innerText = data.errors[property];
+                calendar.removeAllEvents();
+                calendar.refetchEvents();
+                closeModal();
+                if(property == 'slotId'){
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Sorry',
+                        text: data.errors[property],
+                    })
+                }
+                else{
+                    document.getElementById(property+'Error').innerText = data.errors[property];
+                }
             }
         }
 
@@ -71,6 +83,7 @@ function openModal(slot) {
 
 function clearFields(fields = ['slotDate', 'slotTime', 'nameError', 'emailError', 'category_idError']){
     fields.forEach(function(value){
+        console.log(value);
         document.getElementById(value).innerText = "";
     })
 }
