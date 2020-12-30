@@ -4,7 +4,7 @@ function closeModal() {
 }
 
 function bookEvent() {
-    console.log('booking');
+    clearFields();
     let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     var body = {
         slotId: slotId.getAttribute('value'),
@@ -13,7 +13,6 @@ function bookEvent() {
         category_id: category.value,
         remarks: remarks.value
     };
-    console.log(body);
     fetch(bookSlotUrl, {
         headers: {
             "Content-Type": "application/json",
@@ -28,25 +27,50 @@ function bookEvent() {
     .then((response) => {
         return response.json();
     }).then((data) => {
-        console.log(data);
-        
-        calendar.removeAllEvents();
-        calendar.refetchEvents();
+        if(data.success){
+            calendar.removeAllEvents();
+            calendar.refetchEvents();
+            closeModal();
+            Swal.fire(
+                'Slot booked!',
+                'The selected slot was successfully booked',
+                'success'
+            );
+        }
+        else if(!data.success && data.exception){
+            closeModal();
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: data.exceptionMessage,
+                footer: 'Contact the developer.'
+            })
+        }
+        else{
+            for(property in data.errors){
+                document.getElementById(property+'Error').innerText = data.errors[property];
+            }
+        }
+
     })
     .catch(function (error) {
         console.log(error);
     });
-    closeModal();
 
 }
 
 function openModal(slot) {
-    slotDate.innerText = "";
-    slotTime.innerText = "";
+    clearFields();
     slotId.value = "";
 
     slotDate.innerText = slot.start.toDateString();
     slotTime.innerText = slot.start.getHours() + ':' + slot.start.getMinutes() + ' - ' + slot.end.getHours() + ':' + slot.end.getMinutes();
     slotId.value = slot.extendedProps.customId;
     bookEventModal.classList.remove('hidden');
+}
+
+function clearFields(fields = ['slotDate', 'slotTime', 'nameError', 'emailError', 'category_idError']){
+    fields.forEach(function(value){
+        document.getElementById(value).innerText = "";
+    })
 }

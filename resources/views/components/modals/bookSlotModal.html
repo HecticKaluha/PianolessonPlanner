@@ -41,18 +41,27 @@
                             <div class="relative mb-3 w-full w-12/12">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="nameInput">Name</label>
                                 <input id="nameInput" name="name" type="text" class="px-1 py-1 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full w-12/12" placeholder="Name" style="transition: all 0.15s ease 0s;" required>
+                                <span class="text-red-500 text-sm" role="alert">
+                                    <strong id="nameError"></strong>
+                                </span>
                             </div>
                             <div class="relative mb-3 w-full w-12/12">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="category">Category</label>
                                 <select name="category" id="category" class="px-1 py-1 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full w-12/12" style="transition: all 0.15s ease 0s;" required>
                                     <option value="null" selected > - None selected - </option>
                                 </select>
+                                <span class="text-red-500 text-sm" role="alert">
+                                    <strong id="category_idError"></strong>
+                                </span>
                             </div>
                         </div>
 
                         <div class="w-full mb-3">
                             <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="email">E-mail</label>
                             <input id="email" name="name" type="text" class="px-1 py-1 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full w-12/12" placeholder="E-mail" style="transition: all 0.15s ease 0s;" required>
+                            <span class="text-red-500 text-sm" role="alert">
+                                <strong id="emailError"></strong>
+                            </span>
                         </div>
 
                         <div class="w-full">
