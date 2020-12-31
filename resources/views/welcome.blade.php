@@ -560,6 +560,7 @@
                     // },
                 });
                 calendar.render();
+                $('.fc-toolbar-chunk').addClass('flex justify-end flex-wrap');
             });
             });
         </script>
