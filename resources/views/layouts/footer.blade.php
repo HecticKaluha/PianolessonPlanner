@@ -59,12 +59,16 @@
             </div>
         </div>
         <hr class="my-6 border-gray-400"/>
-        <div class="flex flex-wrap items-center md:justify-between justify-center">
-            <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-                <div class="text-sm text-gray-600 font-semibold py-1">
-                    Copyright © 2019 Tailwind Starter Kit by
+        <div class="flex flex-wrap items-center md:justify-between">
+            <div class="w-full md:w-8/12">
+                <div class="text text-gray-600 font-semibold py-1 px-4">
+                    Developer: Copyright &copy; 2020 Stefano Verhoeve
+                </div>
+                <div class="text-sm text-gray-600 text-xs py-1 px-4">
+                    Template: Copyright © 2019 Tailwind Starter Kit by
                     <a href="https://www.creative-tim.com" class="text-gray-600 hover:text-gray-900">Creative
                         Tim</a>.
+                    <br>
                 </div>
             </div>
         </div>
