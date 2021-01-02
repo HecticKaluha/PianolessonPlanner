@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SlotController;
+use App\Mail\SlotBookedMail;
+use App\Models\Slot;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,13 @@ use Illuminate\Support\Facades\Route;
 //normal routes
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/email', function(){
+    $slot = Slot::find(1);
+    return new SlotBookedMail($slot);
+});
+
+Route::get('/testemail', [SlotController::class, 'sendSlotBookedMail'])
+    ->name('sendSlotBookedMail');
 
 
 //dashboard routes
