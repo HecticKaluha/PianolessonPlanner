@@ -17,7 +17,7 @@ class SlotSeeder extends Seeder
      */
     public function run()
     {
-        $amount = 15;
+        $amount = 10000;
         if (Schema::hasTable('slots') == false) {
             $this->command->warn("Seeding slots failed; table 'slots' doesn't exist in database...");
             return;

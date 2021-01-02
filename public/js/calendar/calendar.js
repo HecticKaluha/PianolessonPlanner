@@ -1,5 +1,4 @@
 function closeModal() {
-    console.log('closing');
     bookEventModal.classList.add('hidden')
 }
 
@@ -29,13 +28,30 @@ function bookEvent() {
     }).then((data) => {
         if(data.success){
             calendar.removeAllEvents();
-            calendar.refetchEvents();
-            closeModal();
-            Swal.fire(
-                'Slot booked!',
-                'The selected slot was successfully booked',
-                'success'
-            );
+            var refetchPromise = new Promise((resolve, reject)=>{
+                try{
+                    calendar.refetchEvents();
+                    resolve();
+                }
+                catch(error){
+                    reject(error);
+                }
+            })
+            refetchPromise.then(()=>{
+                closeModal();
+                Swal.fire(
+                    'Slot booked!',
+                    'The selected slot was successfully booked',
+                    'success'
+                );
+            }).catch((error)=>{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: error.message,
+                    footer: 'Contact the developer.'
+                })
+            });
         }
         else if(!data.success && data.exception){
             closeModal();
@@ -48,27 +64,46 @@ function bookEvent() {
         }
         else{
             for(property in data.errors){
-                calendar.removeAllEvents();
-                calendar.refetchEvents();
-                closeModal();
-                if(property == 'slotId'){
-                    Swal.fire({
-                        icon: 'warning',
-                        title: 'Sorry',
-                        text: data.errors[property],
-                    })
+                if(property === 'slotId'){
+                    refetchPromise = new Promise((resolve, reject)=>{
+                        try{
+                            calendar.refetchEvents();
+                            resolve(property);
+                        }
+                        catch(error){
+                            reject(error);
+                        }
+                    });
+                    refetchPromise.then((prop)=>{
+                        closeModal();
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Sorry',
+                            text: data.errors[prop],
+                        })
+                    }).catch((error)=>{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: error.message,
+                            footer: 'Contact the developer.'
+                        })
+                    });
                 }
                 else{
                     document.getElementById(property+'Error').innerText = data.errors[property];
                 }
             }
         }
-
     })
     .catch(function (error) {
-        console.log(error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: error.message,
+            footer: 'Contact the developer.'
+        })
     });
-
 }
 
 function openModal(slot) {
@@ -83,7 +118,6 @@ function openModal(slot) {
 
 function clearFields(fields = ['slotDate', 'slotTime', 'nameError', 'emailError', 'category_idError']){
     fields.forEach(function(value){
-        console.log(value);
         document.getElementById(value).innerText = "";
     })
 }

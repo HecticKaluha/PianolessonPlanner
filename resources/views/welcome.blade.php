@@ -497,74 +497,74 @@
             });
         </script>
 
+        <script src="{{asset('js/calendar/calendar.js')}}"></script>
         <script>
-{{--    load events then load calendar--}}
             var events = [];
             document.addEventListener('DOMContentLoaded', function() {
-            fetch(slotsUrl, {
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json, text-plain, */*",
-                    "X-Requested-With": "XMLHttpRequest",
-                },
-                method: 'get',
-                credentials: "same-origin"
-            }).then(function(response){
-                return response.json();
-            }).then(function(data){
-
-            }).then(function(){
-                calendarEl = document.getElementById('calendar');
-                calendar = new FullCalendar.Calendar(calendarEl, {
-                    initialView: 'dayGridMonth',
-                    eventDisplay: 'block',
-                    // events: events,
-                    eventSources: [
-                        {
-                            url:slotsUrl,
-                        }
-                    ],
-                    eventSourceSuccess: function(content, xhr) {
-                        events = [];
-                        content.data.forEach(function(value){
-                            events.push(
-                                {
-                                    title: '',
-                                    start: value.date + 'T' + value.startTime,
-                                    end: value.date + 'T' + value.endTime,
-                                    allDay: false,
-                                    customId: value.id,
-                                    customBooked: value.booked
-                                }
-                            );
-                        });
-                        return events;
+                fetch(slotsUrl, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json, text-plain, */*",
+                        "X-Requested-With": "XMLHttpRequest",
                     },
-                    height: 'auto',
-                    eventDidMount: function(custom){
-                        if(custom.event.extendedProps.customBooked){
-                            custom.el.classList.add('bg-red-500');
-                        }
-                        else{
-                            custom.el.classList.add('bg-green-500', 'cursor-pointer');
-                            custom.el.onclick = function(){
-                                openModal(custom.event);
-                            };
-                        }
-                    },
+                    method: 'get',
+                    credentials: "same-origin"
+                }).then(function(response){
+                    return response.json();
+                }).then(function(data){
 
-                    //Activating modal for 'when an event is clicked'
-                    // eventClick: function (event) {
-                    //     console.log(event);
-                    //     openModal();
-                    // },
+                }).then(function(){
+                    calendarEl = document.getElementById('calendar');
+                    calendar = new FullCalendar.Calendar(calendarEl, {
+                        initialView: 'dayGridMonth',
+                        eventDisplay: 'block',
+                        eventBorderColor:'transparent',
+                        eventOrder:'start',
+                        eventSources: [
+                            {
+                                url:slotsUrl,
+                            }
+                        ],
+                        eventSourceSuccess: function(content, xhr) {
+                            events = [];
+                            content.data.forEach(function(value){
+                                events.push(
+                                    {
+                                        title: '',
+                                        start: value.date + 'T' + value.startTime,
+                                        end: value.date + 'T' + value.endTime,
+                                        allDay: false,
+                                        customId: value.id,
+                                        customBooked: value.booked
+                                    }
+                                );
+                            });
+                            return events;
+                        },
+                        height: 'auto',
+                        eventDidMount: function(custom){
+                            if(custom.event.extendedProps.customBooked){
+                                custom.el.classList.add('bg-red-500');
+                            }
+                            else{
+                                custom.el.classList.add('bg-green-500', 'cursor-pointer');
+                                custom.el.onclick = function(){
+                                    openModal(custom.event);
+                                };
+                            }
+                        },
+
+                        //Activating modal for 'when an event is clicked'
+                        // eventClick: function (event) {
+                        //     console.log(event);
+                        //     openModal();
+                        // },
+                    });
+                    calendar.render();
+                    $('.fc-toolbar-chunk').addClass('flex justify-end flex-wrap');
                 });
-                calendar.render();
-                $('.fc-toolbar-chunk').addClass('flex justify-end flex-wrap');
-            });
             });
         </script>
-        <script src="{{asset('js/calendar/calendar.js')}}"></script>
 
         <script src="{{asset('js/carousel/carousel.js')}}"></script>
         <script src="{{asset('js/biography/biography.js')}}"></script>
