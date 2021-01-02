@@ -122,7 +122,9 @@ class SlotController extends Controller
     }
 
     public function getAll(){
-        return SlotResource::collection(Slot::all());
+        $from = request('start');
+        $to = request('end');
+        return SlotResource::collection(Slot::where('date', '>=', $from)->where('date', '<=', $to)->get());
     }
 
     public function bookSlot(Request $request){
