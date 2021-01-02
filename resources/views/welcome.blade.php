@@ -240,7 +240,7 @@
                 <div class="flex flex-wrap mt-12 justify-center">
                     <div class="w-full lg:w-10/12 mb-12 px-4">
                         @if($currentBrowser == "Safari")
-                            <iframe id="videoElement" class="min-w-full rounded-lg shadow-lg ytVideo" src="https://www.youtube.com/embed/GL2ulyPSngc">
+                            <iframe id="videoElement" class="min-w-full rounded-lg shadow-lg ytVideo" src="https://www.youtube.com/embed/GL2ulyPSngc" allow allowfullscreen>
                             </iframe>
                         @else
                             <video id="videoElement" class="w-full max-h-screen min-w-full video rounded-lg shadow-lg" controls>
@@ -479,102 +479,9 @@
             let slotsUrl = '{{route('getAllSlots')}}';
             var calendar;
             var calendarEl;
-            document.addEventListener('DOMContentLoaded', function() {
-                //get the categories
-                fetch(categoriesUrl, {
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json, text-plain, */*",
-                        "X-Requested-With": "XMLHttpRequest",
-                    },
-                    method: 'get',
-                    credentials: "same-origin"
-                }).then(function(response){
-                    return response.json();
-                }).then(function(data){
-                    data.data.forEach(function(value){
-                        var opt = document.createElement('option');
-                        opt.setAttribute('value', value.id);
-                        opt.innerText = value.name;
-                        category.appendChild(opt);
-                    });
-                }).catch(function (error) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: "Couldn't get the categories.",
-                        text: error.message,
-                        footer: 'Contact the developer.'
-                    })
-                });
-            });
-        </script>
-
-        <script src="{{asset('js/calendar/calendar.js')}}"></script>
-        <script>
             var events = [];
-            document.addEventListener('DOMContentLoaded', function() {
-                calendarEl = document.getElementById('calendar');
-                calendar = new FullCalendar.Calendar(calendarEl, {
-                    initialView: 'dayGridMonth',
-                    eventDisplay: 'block',
-                    eventBorderColor:'transparent',
-                    eventOrder:'start',
-                    loading: function(isLoading) {
-                        if (isLoading){
-                            document.getElementById('loading').style.display = "block";
-                            document.getElementById('calendar').style.opacity = "0.3";
-                        }
-                        else {
-                            document.getElementById('loading').style.display = "none";
-                            document.getElementById('calendar').style.opacity = "1";
-                        }
-                    },
-                    eventSources: [
-                        {
-                            url:slotsUrl,
-                        }
-                    ],
-                    eventSourceSuccess: function(content, xhr) {
-                        events = [];
-                        content.data.forEach(function(value){
-                            events.push(
-                                {
-                                    title: '',
-                                    start: value.date + 'T' + value.startTime,
-                                    end: value.date + 'T' + value.endTime,
-                                    allDay: false,
-                                    customId: value.id,
-                                    customBooked: value.booked
-                                }
-                            );
-                        });
-                        return events;
-                    },
-                    eventSourceFailure: function(error){
-                        Swal.fire({
-                            icon: 'error',
-                            title: "Couldn't get the slots...",
-                            text: error.message,
-                            footer: 'Contact the developer.'
-                        });
-                    },
-                    height: 'auto',
-                    eventDidMount: function(custom){
-                        if(custom.event.extendedProps.customBooked){
-                            custom.el.classList.add('bg-red-500');
-                        }
-                        else{
-                            custom.el.classList.add('bg-green-500', 'cursor-pointer');
-                            custom.el.onclick = function(){
-                                openModal(custom.event);
-                            };
-                        }
-                    },
-                });
-                calendar.render();
-                $('.fc-toolbar-chunk').addClass('flex justify-end flex-wrap');
-            });
         </script>
+        <script src="{{asset('js/calendar/calendar.js')}}"></script>
 
         <script src="{{asset('js/carousel/carousel.js')}}"></script>
         <script src="{{asset('js/biography/biography.js')}}"></script>
