@@ -27,29 +27,13 @@ function bookEvent() {
         return response.json();
     }).then((data) => {
         if(data.success){
-            var refetchPromise = new Promise((resolve, reject)=>{
-                try{
-                    calendar.refetchEvents();
-                    resolve();
-                }
-                catch(error){
-                    reject(error);
-                }
-            })
-            refetchPromise.then(()=>{
-                closeModal();
-                Swal.fire(
-                    'Slot booked!',
-                    'The selected slot was successfully booked',
-                    'success'
-                );
-            }).catch((error)=>{
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: error.message,
-                    footer: 'Contact the developer.'
-                })
+            closeModal();
+            Swal.fire(
+                'Slot booked!',
+                'The selected slot was successfully booked',
+                'success'
+            ).then(()=>{
+                calendar.refetchEvents();
             });
         }
         else if(!data.success && data.exception){
@@ -64,30 +48,14 @@ function bookEvent() {
         else{
             for(property in data.errors){
                 if(property === 'slotId'){
-                    refetchPromise = new Promise((resolve, reject)=>{
-                        try{
-                            calendar.refetchEvents();
-                            resolve(property);
-                        }
-                        catch(error){
-                            reject(error);
-                        }
-                    });
-                    refetchPromise.then((prop)=>{
-                        closeModal();
-                        Swal.fire({
-                            icon: 'warning',
-                            title: 'Sorry',
-                            text: data.errors[prop],
-                        })
-                    }).catch((error)=>{
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: error.message,
-                            footer: 'Contact the developer.'
-                        })
-                    });
+                    closeModal();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Sorry',
+                        text: data.errors[property],
+                    }).then(()=>{
+                        calendar.refetchEvents();
+                    })
                 }
                 else{
                     document.getElementById(property+'Error').innerText = data.errors[property];
