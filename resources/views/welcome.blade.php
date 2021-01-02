@@ -394,10 +394,15 @@
                     <div class="w-full md:w-12/12 lg:w-9/12 lg:mb-0 mb-12">
                         <div class="">
                             <div class=" text-center">
-                                <div class="mt-6">
+                                <div class="mt-6 relative">
 {{--                                    Bootstrap calendar--}}
+                                    <div id="loading" class="h-full w-full position absolute top-1/2 text-center">
+                                        <div class="loading-icon"></div>
+                                        <div>Loading...</div>
+                                    </div>
                                     <div id='calendar'>
                                     </div>
+
 {{--                                    End of Bootstrap calendar--}}
 
                                 </div>
@@ -520,6 +525,16 @@
                         eventDisplay: 'block',
                         eventBorderColor:'transparent',
                         eventOrder:'start',
+                        loading: function(isLoading) {
+                            if (isLoading){
+                                document.getElementById('loading').style.display = "block";
+                                document.getElementById('calendar').style.opacity = "0.3";
+                            }
+                            else {
+                                document.getElementById('loading').style.display = "none";
+                                document.getElementById('calendar').style.opacity = "1";
+                            }
+                        },
                         eventSources: [
                             {
                                 url:slotsUrl,
@@ -540,6 +555,14 @@
                                 );
                             });
                             return events;
+                        },
+                        eventSourceFailure: function(error){
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Couldn't get the slots...",
+                                text: error.message,
+                                footer: 'Contact the developer.'
+                            });
                         },
                         height: 'auto',
                         eventDidMount: function(custom){

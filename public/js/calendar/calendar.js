@@ -27,7 +27,6 @@ function bookEvent() {
         return response.json();
     }).then((data) => {
         if(data.success){
-            calendar.removeAllEvents();
             var refetchPromise = new Promise((resolve, reject)=>{
                 try{
                     calendar.refetchEvents();
