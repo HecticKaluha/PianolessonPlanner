@@ -122,7 +122,7 @@ function bookEvent() {
             closeModal();
             Swal.fire(
                 'Slot booked!',
-                'The selected slot was successfully booked',
+                'We will send you an e-mail with details swiftly.',
                 'success'
             ).then(()=>{
                 calendar.refetchEvents();
@@ -168,8 +168,6 @@ function bookEvent() {
 function openModal(slot) {
     clearFields();
     slotId.value = "";
-
-    console.log(slot.end.getMinutes().toString().length);
 
     slotDate.innerText = slot.start.toDateString();
     slotTime.innerText = slot.start.getHours() + ':' + (slot.start.getMinutes().toString().length == 1 ? '0' + slot.start.getMinutes() : slot.start.getMinutes()) + ' - ' + slot.end.getHours() + ':' + (slot.end.getMinutes().toString().length <= 1 ? '0' + slot.end.getMinutes() : slot.end.getMinutes());

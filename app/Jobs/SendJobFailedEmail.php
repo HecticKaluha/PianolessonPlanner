@@ -2,8 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Mail\NewBookingReceived;
-use App\Models\Slot;
+use App\Mail\JobFailed;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -13,23 +12,23 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
 use Throwable;
 
-class SendNewBookingReceivedEmail implements ShouldQueue
+class SendJobFailedEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public $backoff = 3;
     public $tries = 3;
 
-    protected $slot;
+    protected $exceptionMessage;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(Slot $slot)
+    public function __construct(String $exceptionMessage)
     {
-        $this->slot = $slot;
+        $this->exceptionMessage = $exceptionMessage;
     }
 
     /**
@@ -39,12 +38,7 @@ class SendNewBookingReceivedEmail implements ShouldQueue
      */
     public function handle()
     {
-        try {
-            $email = new NewBookingReceived($this->slot);
-            Mail::to(env('OWNER_EMAIL'))->send($email);
-        }
-        catch (Throwable $e) {
-            SendJobFailedEmail::dispatch($e->getMessage());
-        }
+        $email = new JobFailed($this->exceptionMessage);
+        Mail::to('stefanoverhoeve44@gmail.com')->send($email);
     }
 }

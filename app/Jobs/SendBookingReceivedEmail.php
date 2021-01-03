@@ -4,13 +4,17 @@ namespace App\Jobs;
 
 use App\Mail\BookingReceived;
 use App\Models\Slot;
+use http\Message;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Prophecy\Exception\Doubler\ClassNotFoundException;
+use Throwable;
 
 class SendBookingReceivedEmail implements ShouldQueue
 {
@@ -37,7 +41,12 @@ class SendBookingReceivedEmail implements ShouldQueue
      */
     public function handle()
     {
-        $email = new BookingReceived($this->slot);
-        Mail::to($this->slot->email)->send($email);
+        try{
+            $email = new BookingReceived($this->slot);
+            Mail::to($this->slot->email)->send($email);
+        }
+        catch(Throwable $e){
+            SendJobFailedEmail::dispatch($e->getMessage());
+        }
     }
 }
