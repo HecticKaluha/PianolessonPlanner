@@ -10,7 +10,7 @@ Below you will find all the information about your booked slot
     <li>remarks: {{$slot->remarks}}</li>
 </ul>
 
-I received your e-mail. I will contact you with additional and questions and information (such as place etc) as soon as possible.
+I received your e-mail. I will contact you with additional questions and information (such as place etc) as soon as possible.
 <br>
 <br>
 Sunny Lee, <br>
