@@ -8,12 +8,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SlotBookedMail extends Mailable
+class NewBookingReceived extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $slot;
-
     /**
      * Create a new message instance.
      *
@@ -31,6 +30,6 @@ class SlotBookedMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.slotBookedMail');
+        return $this->markdown('emails.newBookingReceived');
     }
 }

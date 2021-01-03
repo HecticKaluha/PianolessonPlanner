@@ -6,7 +6,8 @@ use App\DataTables\SlotDataTable;
 use App\Http\Requests\CreateSlotRequest;
 use App\Http\Requests\UpdateSlotRequest;
 use App\Http\Resources\SlotResource;
-use App\Mail\SlotBookedMail;
+use App\Mail\BookingReceived;
+use App\Mail\NewBookingReceived;
 use App\Models\Category;
 use App\Models\Slot;
 use App\Rules\SlotNotBooked;
@@ -160,8 +161,8 @@ class SlotController extends Controller
                 $response['success'] = true;
                 $response['message'] = 'Successfully booked!';
 
-                //implement mailing
-                $this->sendSlotBookedMail($slot);
+                //implement mailing to be async
+                $this->sendBookingReceived($slot);
             }
             catch(Throwable $e){
                 $response['message'] = 'There was an error when processing your booking. Try again later.';
@@ -175,9 +176,8 @@ class SlotController extends Controller
         return $response;
     }
 
-    public function sendSlotBookedMail($slot = null){
-        $slot = Slot::find(1);
-        Mail::to('stefanoverhoeve44@gmail.com')->send(new SlotBookedMail($slot));
-
+    public function sendBookingReceived($slot){
+        Mail::to($slot->email)->send(new BookingReceived($slot));
+        Mail::to(env('OWNER_EMAIL'))->send(new NewBookingReceived($slot));
     }
 }
