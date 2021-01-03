@@ -6,13 +6,12 @@ use App\DataTables\SlotDataTable;
 use App\Http\Requests\CreateSlotRequest;
 use App\Http\Requests\UpdateSlotRequest;
 use App\Http\Resources\SlotResource;
-use App\Mail\BookingReceived;
-use App\Mail\NewBookingReceived;
+use App\Jobs\SendBookingReceivedEmail;
+use App\Jobs\SendNewBookingReceivedEmail;
 use App\Models\Category;
 use App\Models\Slot;
 use App\Rules\SlotNotBooked;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Throwable;
 
@@ -177,7 +176,9 @@ class SlotController extends Controller
     }
 
     public function sendBookingReceived($slot){
-        Mail::to($slot->email)->send(new BookingReceived($slot));
-        Mail::to(env('OWNER_EMAIL'))->send(new NewBookingReceived($slot));
+        SendBookingReceivedEmail::dispatch($slot);
+        SendNewBookingReceivedEmail::dispatch($slot);
+//        Mail::to($slot->email)->queue(new BookingReceived($slot));
+//        Mail::to(env('OWNER_EMAIL'))->send(new NewBookingReceived($slot));
     }
 }
