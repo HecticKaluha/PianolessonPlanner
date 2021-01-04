@@ -313,41 +313,16 @@
                             </div>
                             <h3 class="text-3xl font-semibold">Private lessons</h3>
                             <p class="mt-4 text-lg leading-relaxed text-gray-600">
-                               Sunny provides private one-on-one lessons with a quality guarantee. Lessons can vary from 45 minutes for children, to 2 hours max. for adults. It doesnt matter if you have never touched a piano and can't read notes, or if you're an advanced player. <br>
-                                You can take lessons in the following categories:
+                               Sunny provides private one-on-one lessons with a quality guarantee. Lessons can vary from 45 minutes for children, to 2 hours max. for adults. It doesnt matter if you have never touched a piano and can't read notes, or if you're an advanced player. Lessons will be tailored to you as an individual. <br>
                             </p>
-                            <ul class="list-none mt-6">
-                                <li class="py-2">
-                                    <div class="flex items-center">
-                                        <div>
-                                            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i class="fas fa-fingerprint"></i></span>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-gray-600">
-                                                Category 1 </h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="py-2">
-                                    <div class="flex items-center">
-                                        <div>
-                                            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i class="fab fa-html5"></i></span>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-gray-600">Category 2</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="py-2">
-                                    <div class="flex items-center">
-                                        <div>
-                                            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i class="far fa-paper-plane"></i></span>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-gray-600">Category 3</h4>
-                                        </div>
-                                    </div>
-                                </li>
+                            <p class="mt-4 text-lg leading-relaxed text-gray-600">You can take lessons in the following categories:</p>
+                            <ul id="categoryList" class="list-disc pl-10 mt-3 text-lg">
+                                @foreach($categories as $category)
+                                    <li class="py-1">
+                                        <h4 class="text-gray-600">
+                                            {{$category->name}} </h4>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -361,7 +336,7 @@
                     <div class="w-full lg:w-6/12 px-4">
                         <h2 class="text-4xl font-semibold">Plan your lesson now!</h2>
                         <p class="text-lg leading-relaxed m-4 text-gray-600">
-                           The calendar below shows Sunny's availability. Click on a green part of a day to reserve your spot.
+                           The calendar below shows Sunny's availability. Click on a green part of a day to reserve your spot. You can only book a slot at least one week from now.
                         </p>
                     </div>
                 </div>

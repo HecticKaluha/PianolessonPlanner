@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if(!custom.event.extendedProps.customBookable){
-                custom.el.classList.add('opacity-70');
+                custom.el.classList.add('opacity-50');
             }
         },
     });
