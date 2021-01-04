@@ -144,7 +144,7 @@ function bookEvent() {
                     Swal.fire({
                         icon: 'warning',
                         title: 'Sorry',
-                        text: data.errors[property],
+                        text: data.errors[property].join(" "),
                     }).then(()=>{
                         calendar.refetchEvents();
                     })

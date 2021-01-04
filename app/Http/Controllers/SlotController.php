@@ -11,6 +11,7 @@ use App\Jobs\SendJobFailedEmail;
 use App\Jobs\SendNewBookingReceivedEmail;
 use App\Models\Category;
 use App\Models\Slot;
+use App\Rules\SlotBookable;
 use App\Rules\SlotNotBooked;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -142,7 +143,7 @@ class SlotController extends Controller
         ];
 
         $rules = [
-            'slotId' => ['required','exists:slots,id', new SlotNotBooked()],
+            'slotId' => ['required','exists:slots,id', new SlotNotBooked(), new SlotBookable()],
             'name' => 'required',
             'email' => 'required|email',
             'category_id' => 'required|exists:categories,id',

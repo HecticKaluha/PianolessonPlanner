@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class SlotResource extends JsonResource
@@ -21,6 +22,7 @@ class SlotResource extends JsonResource
             'endTime' => $this->endTime->format('H:i'),
             'category_id' => $this->category_id,
             'booked' => $this->name ? true : false,
+            'bookAble' => $this->date >= Carbon::now()->addDays(6),
         ];
     }
 }
