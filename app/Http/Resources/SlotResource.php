@@ -22,7 +22,7 @@ class SlotResource extends JsonResource
             'endTime' => $this->endTime->format('H:i'),
             'category_id' => $this->category_id,
             'booked' => $this->name ? true : false,
-            'bookAble' => $this->date >= Carbon::now()->addDays(6),
+            'bookable' => $this->date >= Carbon::now()->addDays(6),
         ];
     }
 }

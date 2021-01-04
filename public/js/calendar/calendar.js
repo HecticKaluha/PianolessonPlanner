@@ -59,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         end: value.date + 'T' + value.endTime,
                         allDay: false,
                         customId: value.id,
-                        customBooked: value.booked
+                        customBooked: value.booked,
+                        customBookable: value.bookable
                     }
                 );
             });
@@ -75,14 +76,22 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         height: 'auto',
         eventDidMount: function(custom){
-            if(custom.event.extendedProps.customBooked){
-                custom.el.classList.add('bg-red-500');
-            }
-            else{
+            if(!custom.event.extendedProps.customBooked && custom.event.extendedProps.customBookable){
                 custom.el.classList.add('bg-green-500', 'cursor-pointer');
-                custom.el.onclick = function(){
+                custom.el.onclick = function () {
                     openModal(custom.event);
                 };
+            }
+            else if(!custom.event.extendedProps.customBooked && !custom.event.extendedProps.customBookable){
+                custom.el.classList.add('bg-green-500');
+            }
+            else if(custom.event.extendedProps.customBooked){
+                custom.el.classList.add('bg-red-500');
+
+            }
+
+            if(!custom.event.extendedProps.customBookable){
+                custom.el.classList.add('opacity-70');
             }
         },
     });
