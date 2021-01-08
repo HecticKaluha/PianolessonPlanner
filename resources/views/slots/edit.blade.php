@@ -56,7 +56,7 @@
                         <div class="form-group w-12/12 w-full">
                             <label class="control-label" for="category">Category</label>
                             <select class="form-control" name="category" id="category">
-                                <option value="null" {{$slot->category->id == null ? 'selected' : ''}} > - none selected - </option>
+                                <option value="" {{$slot->category->id == null ? 'selected' : ''}} > - none selected - </option>
                                 @foreach($categories as $category)
                                     <option value="{{$category->id}}" {{$slot->category->id == $category->id ? 'selected' : ''}} >{{$category->name}}</option>
                                 @endforeach
@@ -141,7 +141,7 @@
             $(function() {
                 var optionsDate = $.extend({}, defaults, {
                     format:'DD-MM-YYYY',
-                    minDate: new Date(),
+                    // minDate: new Date(),
                 });
                 var optionsTime = $.extend({}, defaults, {
                     format:'HH:mm',

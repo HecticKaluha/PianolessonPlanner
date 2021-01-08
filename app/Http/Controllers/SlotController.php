@@ -104,8 +104,7 @@ class SlotController extends Controller
             return redirect("/planning");
         }
         else{
-            session()->flash('message', 'The selected time overlaps with an existing slot.');
-            return redirect()->back()->withErrors(array('startTime' => 'The selected time overlaps with an existing slot.'));
+            return redirect()->back()->withErrors(array('error' => 'The selected time overlaps with an existing slot.','startTime' => 'The selected time overlaps with an existing slot.'));
         }
     }
 

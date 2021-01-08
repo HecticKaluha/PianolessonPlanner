@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SlotController;
 use Illuminate\Support\Facades\Route;
@@ -26,9 +27,29 @@ Route::get('/planning', [SlotController::class, 'index'])
     ->middleware(['auth'])
     ->name('planning');
 
-Route::get('/files', function () {
-    return view('files');
-})->middleware(['auth'])->name('files');
+Route::get('/files', [FileController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('files');
+
+Route::get('/file/create', [FileController::class, 'create'])
+    ->middleware(['auth'])
+    ->name('createFile');
+
+Route::post('/file/store', [FileController::class, 'store'])
+    ->middleware(['auth'])
+    ->name('storeFile');
+
+Route::get('/file/{file}', [FileController::class, 'show'])
+    ->middleware(['auth'])
+    ->name('viewFile');
+
+Route::get('/file/{file}/remove', [FileController::class, 'remove'])
+    ->middleware(['auth'])
+    ->name('removeFile');
+
+Route::post('/file/{file}/destroy', [FileController::class, 'destroy'])
+    ->middleware(['auth'])
+    ->name('destroyFile');
 
 Route::get('/blog', function () {
     return view('blog');

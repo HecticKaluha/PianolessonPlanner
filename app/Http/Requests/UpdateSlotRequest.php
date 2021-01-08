@@ -29,8 +29,8 @@ class UpdateSlotRequest extends FormRequest
             'date' => 'required',
             'startTime' => 'required|before:endTime',
             'endTime' => 'required|after:startTime',
-            'category' => 'exists:categories,id',
-            'email' => 'email:rfc,dns',
+            'category' => 'nullable|exists:categories,id',
+            'email' => 'nullable|email:rfc,dns',
         ];
     }
 
@@ -41,7 +41,7 @@ class UpdateSlotRequest extends FormRequest
             'startTime.before' => 'The start time should be before the end time',
             'endTime.after' => 'The end time should be after the start time',
             'category.exists' => 'The category should exist in the database',
-            'email.email' => 'The eail should be a valid email address',
+            'email.email' => 'The email should be a valid email address',
         ];
     }
 

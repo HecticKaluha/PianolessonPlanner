@@ -435,7 +435,7 @@
             </div>
         </section>
 {{--        get categories then load modal--}}
-        @include('components.modals.bookSlotModal');
+        @include('components.modals.bookSlotModal')
     </main>
 
     @push('scripts')
