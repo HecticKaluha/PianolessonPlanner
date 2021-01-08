@@ -23,7 +23,7 @@ class FileDataTable extends DataTable
             ->eloquent($query)
             ->addColumn('action', 'files.dtActions')
             ->editColumn('image', function ($image) {
-                return '<a href="'. route("viewFile",$image->id) . '" ><img style="max-height:300px;" src="' . asset($image->path) .'" alt="An uploaded image"/></a>';
+                return '<a href="'. route("showFile",$image->id) . '" ><img style="max-height:300px;" src="' . asset($image->path) .'" alt="An uploaded image"/></a>';
             })
             ->rawColumns(['image', 'action']);
     }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\SlotController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,7 +42,7 @@ Route::post('/file/store', [FileController::class, 'store'])
 
 Route::get('/file/{file}', [FileController::class, 'show'])
     ->middleware(['auth'])
-    ->name('viewFile');
+    ->name('showFile');
 
 Route::get('/file/{file}/remove', [FileController::class, 'remove'])
     ->middleware(['auth'])
@@ -51,9 +52,37 @@ Route::post('/file/{file}/destroy', [FileController::class, 'destroy'])
     ->middleware(['auth'])
     ->name('destroyFile');
 
-Route::get('/blog', function () {
-    return view('blog');
-})->middleware(['auth'])->name('blog');
+Route::get('/blog', [PostController::class,'index'])
+    ->middleware(['auth'])
+    ->name('blog');
+
+Route::get('/post/create', [PostController::class,'create'])
+    ->middleware(['auth'])
+    ->name('createPost');
+
+Route::post('/post/store', [PostController::class,'store'])
+    ->middleware(['auth'])
+    ->name('storePost');
+
+Route::get('/post/{post}', [PostController::class,'show'])
+    ->middleware(['auth'])
+    ->name('showPost');
+
+Route::get('/post/{post}/edit', [PostController::class,'edit'])
+    ->middleware(['auth'])
+    ->name('editPost');
+
+Route::post('/post/{post}/update', [PostController::class,'update'])
+    ->middleware(['auth'])
+    ->name('updatePost');
+
+Route::get('/post/{post}/remove', [PostController::class,'remove'])
+    ->middleware(['auth'])
+    ->name('removePost');
+
+Route::post('/post/{post}/destroy', [PostController::class,'destroy'])
+    ->middleware(['auth'])
+    ->name('destroyPost');
 
 Route::get('/slot/create', [SlotController::class, 'create'])
     ->middleware(['auth'])
@@ -65,7 +94,7 @@ Route::post('/slot/store', [SlotController::class, 'store'])
 
 Route::get('/slot/{slot}', [SlotController::class, 'show'])
     ->middleware(['auth'])
-    ->name('viewSlot');
+    ->name('showSlot');
 
 Route::get('/slot/{slot}/edit', [SlotController::class, 'edit'])
     ->middleware(['auth'])
