@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Validator;
 use Throwable;
 
 class FileController extends Controller
@@ -64,6 +65,56 @@ class FileController extends Controller
 
         } else {
             return redirect()->back()->withErrors(['error' => 'There were no files selected.', 'files' => 'There were no files selected.']);
+        }
+    }
+
+    public function storeFileTinyMCEUpload(Request $request)
+    {
+        $response = [
+            'success' => false,
+            'exception' => false,
+            'location' => '',
+            'exceptionMessage' => '',
+            'message' => '',
+            'errors' => '',
+        ];
+
+        $rules = [
+            'file' => 'required',
+            'file.*' => 'mimes:jpg,jpeg,png,gif,svg|max:2048'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+        if (!$validator->fails()) {
+            try {
+                if ($request->hasfile('file')) {
+                    $path = $request->file('file')->store('uploads');
+                    File::create([
+                        'path' => $path,
+                    ]);
+
+                    $response['success'] = true;
+                    $response['location'] = asset($path);
+                    $response['message'] = 'Image successfully uploaded';
+                    return $response;
+                } else {
+                    $response['success'] = false;
+                    $response['errors'] = 'No files selected';
+                    $response['message'] = "You didn't select any files";
+                    return $response;
+                }
+            } catch (Throwable $e) {
+                $response['success'] = false;
+                $response['exception'] = true;
+                $response['exceptionMessage'] = $e->getMessage();
+                return $response;
+            }
+        }
+        else{
+            $response['success'] = false;
+            $response['message'] = 'There was something wrong with the data you entered.';
+            $response['errors'] = $validator->messages();
+            return $response;
         }
     }
 

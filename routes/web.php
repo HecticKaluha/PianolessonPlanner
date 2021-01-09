@@ -40,6 +40,10 @@ Route::post('/file/store', [FileController::class, 'store'])
     ->middleware(['auth'])
     ->name('storeFile');
 
+Route::post('/file/store/tinyMCE', [FileController::class, 'storeFileTinyMCEUpload'])
+    ->middleware(['auth'])
+    ->name('storeFileTinyMCE');
+
 Route::get('/file/{file}', [FileController::class, 'show'])
     ->middleware(['auth'])
     ->name('showFile');
