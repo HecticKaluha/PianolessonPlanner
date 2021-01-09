@@ -65,6 +65,9 @@
                 block_unsupported_drop: false,
                 images_upload_credentials: true,
                 images_upload_url: '{{route('storeFile')}}',
+                relative_urls : false,
+                convert_urls : true,
+                remove_script_host : false,
                 images_upload_handler:own_image_upload_handler
             });
 

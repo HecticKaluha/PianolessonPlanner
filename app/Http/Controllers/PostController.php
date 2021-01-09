@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Throwable;
 
 class PostController extends Controller
 {
@@ -14,8 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-//        $posts = Post::all();
-        return view('blog');
+        $posts = Post::all();
+        return view('blog',compact('posts'));
     }
 
     /**
@@ -34,8 +36,18 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatePostRequest $request)
     {
+        try{
+            $slot = Post::create([
+                'post' => $request->post,
+            ]);
+            session()->flash('message', 'Post successfully created');
+            return redirect(route('blog'));
+        }
+        catch(Throwable $e){
+            return redirect()->back()->withErrors(array('error' => 'Something went wrong', 'post' => 'Error occurred : ' .$e->getMessage()));
+        }
 
     }
 
