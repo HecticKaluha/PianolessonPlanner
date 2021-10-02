@@ -39,6 +39,6 @@ class SendJobFailedEmail implements ShouldQueue
     public function handle()
     {
         $email = new JobFailed($this->exceptionMessage);
-        Mail::to('stefanoverhoeve44@gmail.com')->send($email);
+        Mail::to(env('DEVELOPER_EMAIL'))->send($email);
     }
 }

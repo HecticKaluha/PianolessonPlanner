@@ -44,8 +44,14 @@ class SendBookingReceivedEmail implements ShouldQueue
         try{
             $email = new BookingReceived($this->slot);
             Mail::to($this->slot->email)->send($email);
+            $this->slot->emailStatus = true;
+            $this->slot->save();
+            //set property on slot -> emailStatus true
         }
         catch(Throwable $e){
+            //set property on slot -> emailStatus false
+            $this->slot->emailStatus = false;
+            $this->slot->save();
             SendJobFailedEmail::dispatch($e->getMessage());
         }
     }

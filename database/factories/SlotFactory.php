@@ -36,6 +36,7 @@ class SlotFactory extends Factory
             'email' => $category === null ? null : $this->faker->email,
             'name' => $category === null ? null : $this->faker->name,
             'remarks' => $category === null ? null : $this->faker->sentence,
+            'emailStatus' => $category === null ? null : true,
         ];
     }
 }

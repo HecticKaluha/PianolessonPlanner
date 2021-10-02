@@ -22,6 +22,7 @@ class CreateSlotsTable extends Migration
             $table->string('email')->nullable();
             $table->string('name')->nullable();
             $table->text('remarks')->nullable();
+            $table->boolean('emailStatus')->nullable();
             $table->timestamps();
 
             $table->foreign('category_id')
