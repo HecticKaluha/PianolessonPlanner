@@ -27,6 +27,9 @@ class SlotDataTable extends DataTable
             })
             ->editColumn('startTime', function ($slot) {
                 return $slot->startTime->format('H:i') . ' - ' . $slot->endTime->format('H:i');
+            })
+            ->editColumn('emailStatus', function ($slot) {
+                return $slot->emailStatus === null ? '-' : ($slot->emailStatus ? 'success' : 'failed' );
             });
     }
 
@@ -85,6 +88,7 @@ class SlotDataTable extends DataTable
             'email' => [ 'orderable' => false],
             'category' => ['title' => 'Category', 'data' => 'category.name', 'name' => 'category.name', 'orderable' => false],
             'remarks' => ['orderable' => false],
+            'emailStatus' => ['title' => 'Email status', 'searchable' => true, 'orderable' => true],
         ];
     }
 

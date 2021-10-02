@@ -53,21 +53,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group w-12/12 w-full">
-                            <label class="control-label" for="category">Category</label>
-                            <select class="form-control" name="category" id="category">
-                                <option value="" {{$slot->category->id == null ? 'selected' : ''}} > - none selected - </option>
-                                @foreach($categories as $category)
-                                    <option value="{{$category->id}}" {{$slot->category->id == $category->id ? 'selected' : ''}} >{{$category->name}}</option>
-                                @endforeach
-                            </select>
-                            @if ($errors->has('category'))
-                                <span class="text-red-500" role="alert">
-                                    <strong>{{ $errors->first('category') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-
                         <div class="inline-flex w-full w-12/12 space-x-4">
                             <div class="form-group w-12/12 w-full">
                                 <label class="control-label" for="name">Name</label>
@@ -80,11 +65,38 @@
                             </div>
 
                             <div class="form-group w-12/12 w-full">
-                                <label class="control-label" for="email">E-mail</label>
+                                <label class="control-label" for="category">Category</label>
+                                <select class="form-control" name="category" id="category">
+                                    <option value="" {{$slot->category->id == null ? 'selected' : ''}} > - none selected - </option>
+                                    @foreach($categories as $category)
+                                        <option value="{{$category->id}}" {{$slot->category->id == $category->id ? 'selected' : ''}} >{{$category->name}}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('category'))
+                                    <span class="text-red-500" role="alert">
+                                    <strong>{{ $errors->first('category') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="inline-flex w-full w-12/12 space-x-4">
+                            <div class="form-group w-12/12 w-full">
+                                <label class="control-label" for="email">E-mail address</label>
                                 <input class="form-control" name="email" id="email" placeholder="E-mail" value="{{$slot->email}}" type="text">
                                 @if ($errors->has('email'))
                                     <span class="text-red-500" role="alert">
                                     <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group w-12/12 w-full">
+                                <label class="control-label" for="emailStatus">Email sent (1 = yes, 0 = no)</label>
+                                <input class="form-control" name="emailStatus" id="emailStatus" placeholder="Email sent" value="{{$slot->emailStatus}}" type="text">
+                                @if ($errors->has('emailStatus'))
+                                    <span class="text-red-500" role="alert">
+                                    <strong>{{ $errors->first('emailStatus') }}</strong>
                                 </span>
                                 @endif
                             </div>

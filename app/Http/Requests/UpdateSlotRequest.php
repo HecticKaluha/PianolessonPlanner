@@ -31,6 +31,7 @@ class UpdateSlotRequest extends FormRequest
             'endTime' => 'required|after:startTime',
             'category' => 'nullable|exists:categories,id',
             'email' => 'nullable|email:rfc,dns',
+            'emailStatus' => 'nullable|boolean'
         ];
     }
 
@@ -42,6 +43,7 @@ class UpdateSlotRequest extends FormRequest
             'endTime.after' => 'The end time should be after the start time',
             'category.exists' => 'The category should exist in the database',
             'email.email' => 'The email should be a valid email address',
+            'emailStatus.boolean' => 'The :attribute field should be 0 or 1',
         ];
     }
 
@@ -55,6 +57,7 @@ class UpdateSlotRequest extends FormRequest
         $name = request('name');
         $email = request('email');
         $remarks = request('remarks');
+        $emailStatus = request('emailStatus');
 
         if(Slot::where('date', '=', $date)->where('startTime', '<=', $startTime)->where('endTime', '>=', $startTime)->where('id', '!=', $slot->id)->count() == 0 && Slot::where('date', '=', $date)->where('startTime', '<=', $endTime)->where('endTime', '>=', $endTime)->where('id', '!=', $slot->id)->count() == 0){
             $slot->date = $date;
@@ -64,6 +67,7 @@ class UpdateSlotRequest extends FormRequest
             $slot->name = $name;
             $slot->email = $email;
             $slot->remarks = $remarks;
+            $slot->emailStatus = $emailStatus;
 
             $slot->save();
             $persisted = true;
