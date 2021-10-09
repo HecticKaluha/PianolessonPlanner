@@ -341,7 +341,7 @@
                     <div class="w-full lg:w-6/12 px-4">
                         <h2 class="text-4xl font-semibold">Plan your lesson now!</h2>
                         <p class="text-lg leading-relaxed m-4 text-gray-600">
-                           The calendar below shows Sunny's availability. Click on a green part of a day to reserve your spot. You can only book a slot at least one week from now.
+                            The calendar below shows Sunny's availability. Click on a green part of a day to reserve your spot. <span class="font-bold">You can only book a slot at least one week from now.</span>
                         </p>
                     </div>
                 </div>
