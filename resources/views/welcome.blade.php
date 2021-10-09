@@ -160,7 +160,13 @@
                     <polygon class="text-gray-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
                 </svg>
             </div>
+
+
             <div class="sm:container mx-auto px-4 pt-12 lg:pt-24 lg:pb-24">
+                <div id="images" class="text-gray-600 p-3 mx-4 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
+                    <i class="fas fa-images text-3xl"></i>
+                </div>
+
                 <div class="flex flex-wrap">
                     <div class="w-full lg:w-12/12 px-4">
                         <h2 class="text-4xl font-semibold text-white">Showcase - My work</h2>
@@ -168,10 +174,6 @@
                             Below are some highlights from my career so far.
                         </p>
                     </div>
-                </div>
-
-                <div id="images" class="text-gray-600 p-3 mx-4 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
-                    <i class="fas fa-images text-3xl"></i>
                 </div>
 
                 <div class="flex flex-wrap mt-12 mb-12 justify-center">
@@ -237,17 +239,23 @@
                     <i class="fas fa-film text-3xl"></i>
                 </div>
 
+                <div class="flex flex-wrap">
+                    <div class="w-full lg:w-12/12 px-4">
+                        <h2 class="text-4xl font-semibold text-white">Videos</h2>
+                    </div>
+                </div>
+
                 <div class="flex flex-wrap mt-12 justify-center">
                     <div class="w-full lg:w-10/12 mb-12 px-4">
-                        @if($currentBrowser == "Safari")
+{{--                        @if($currentBrowser == "Safari")--}}
                             <iframe id="videoElement" class="min-w-full rounded-lg shadow-lg ytVideo" src="https://www.youtube.com/embed/GL2ulyPSngc" allow allowfullscreen>
                             </iframe>
-                        @else
-                            <video id="videoElement" class="w-full max-h-screen min-w-full video rounded-lg shadow-lg" controls>
-                                <source src="{{asset('video/RDWF.mp4')}}" type="video/mp4">
-                                Your browser does not support HTML video.
-                            </video>
-                        @endif
+{{--                        @else--}}
+{{--                            <video id="videoElement" class="w-full max-h-screen min-w-full video rounded-lg shadow-lg" controls>--}}
+{{--                                <source src="{{asset('video/RDWF.mp4')}}" type="video/mp4">--}}
+{{--                                Your browser does not support HTML video.--}}
+{{--                            </video>--}}
+{{--                        @endif--}}
 
 
 {{--                        <blockquote class="relative mt-4 mb-4">--}}
@@ -271,14 +279,11 @@
                 <div class="flex flex-wrap justify-center">
 
                     <div id="videoCarousel" class="w-full w-12/12 space-x-4 overflow-x-scroll flex justify-start px-4 rail">
-
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/thumbnails/sxo.png')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" data-ytsrc="https://www.youtube.com/embed/GL2ulyPSngc" src="{{asset('img/thumbnails/RDWF.png')}}"/>
-{{--                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/banner.jpg')}}"/>--}}
-{{--                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/piano.jpg')}}"/>--}}
-{{--                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" data-ytsrc="" src="{{asset('img/professional.jpg')}}"/>--}}
-{{--                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/banner.jpg')}}"/>--}}
-
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-ytsrc="https://www.youtube.com/embed/W_gWI2ZHZyM" src="{{asset('img/thumbnails/pop_rocks.jpeg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-ytsrc="https://www.youtube.com/embed/Ydtg4zGJkmk" src="{{asset('img/thumbnails/pure_imagination.jpeg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-ytsrc="https://www.youtube.com/embed/FK3OtDc8hrk" src="{{asset('img/thumbnails/dancing_on_the_ceiling.jpeg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-ytsrc="https://www.youtube.com/embed/Cp3WWtWW8Lw" src="{{asset('img/thumbnails/final_exam.jpeg')}}"/>
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-ytsrc="https://www.youtube.com/embed/GL2ulyPSngc" src="{{asset('img/thumbnails/RDWF.png')}}"/>
                     </div>
 
                     <div id="videoCarouselButtonLeft" class="cursor-pointer h-6 w-6 text-gray-600 p-2 mx-4 text-center inline-flex items-center justify-center w-8 mb-6 shadow-lg rounded-full bg-gray-100">

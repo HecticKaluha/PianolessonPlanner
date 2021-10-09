@@ -1,7 +1,8 @@
 @component('mail::message')
 # Your booked lesson
 
-Below you will find all the information about your booked slot
+Thank you for your booking.<br>
+Below you will find all the information about your booked slot.
 ## Your lesson:
 <ul>
     <li>date: {{$slot->date->format('d-M-Y')}}</li>

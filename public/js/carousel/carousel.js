@@ -19,7 +19,7 @@ for(videoOption of videoCarousel.childNodes){
 
 function changeVideo(e){
     removeClasses();
-    if(checkBrowser() !== "Chrome"){
+    // if(checkBrowser() !== "Chrome"){
         var ytSrc = e.target.dataset.ytsrc;
         console.log(ytSrc);
         if(ytSrc !== ""){
@@ -34,19 +34,19 @@ function changeVideo(e){
                 confirmButtonText: 'Great!'
             })
         }
-    }
-    else{
-        videoElement.innerHTML = "";
-
-        var source = document.createElement('source');
-        var text = document.createTextNode('Your browser does not support HTML Video');
-        source.setAttribute('src', e.target.dataset.src);
-        videoElement.appendChild(source);
-        videoElement.appendChild(text);
-        videoElement.load();
-        videoElement.autoplay = true;
-        e.target.classList.add(...nowPlayingClassList);
-    }
+    // }
+    // else{
+    //     videoElement.innerHTML = "";
+    //
+    //     var source = document.createElement('source');
+    //     var text = document.createTextNode('Your browser does not support HTML Video');
+    //     source.setAttribute('src', e.target.dataset.src);
+    //     videoElement.appendChild(source);
+    //     videoElement.appendChild(text);
+    //     videoElement.load();
+    //     videoElement.autoplay = true;
+    //     e.target.classList.add(...nowPlayingClassList);
+    // }
 }
 
 function removeClasses(){
