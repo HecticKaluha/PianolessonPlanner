@@ -168,6 +168,7 @@ class SlotController extends Controller
                 $response['success'] = true;
                 $response['message'] = 'Successfully booked!';
 
+                $slot = Slot::find($request->get('slotId'));
                 $this->sendBookingReceived($slot);
             }
             catch(Throwable $e){
