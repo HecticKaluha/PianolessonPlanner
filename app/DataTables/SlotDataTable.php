@@ -29,7 +29,7 @@ class SlotDataTable extends DataTable
                 return $slot->startTime->format('H:i') . ' - ' . $slot->endTime->format('H:i');
             })
             ->editColumn('emailStatus', function ($slot) {
-                return $slot->emailStatus === null ? '-' : ($slot->emailStatus ? 'success' : 'failed' );
+                return $slot->emailStatus === null ? '' : ($slot->emailStatus ? 'success' : 'failed' );
             });
     }
 
