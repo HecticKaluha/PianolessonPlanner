@@ -24,14 +24,14 @@
             <div class="w-full lg:w-6/12 px-4">
                 <div class="flex flex-wrap items-top mb-6">
                     <div class="w-full lg:w-4/12 pt-4 lg:pt-0 lg:px-4 ml-auto">
-                        <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
+                        <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Privacy</span>
                         <ul class="list-unstyled">
                             <li>
-                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#">Blog</a>
+                                <span class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm cursor-pointer" id="privacy-policy">Privacy Policy</span>
                             </li>
-                            <li>
-                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#">Book me for events</a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#">Book me for events</a>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
 {{--                    <div class="w-full lg:w-4/12 px-4">--}}

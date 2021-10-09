@@ -460,6 +460,7 @@
 
         <script src="{{asset('js/carousel/carousel.js')}}"></script>
         <script src="{{asset('js/biography/biography.js')}}"></script>
+        <script src="{{asset('js/privacy/privacyPolicy.js')}}"></script>
         <script>
             function toggleNavbar(collapseID) {
                 document.getElementById(collapseID).classList.toggle("hidden");

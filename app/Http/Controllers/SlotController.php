@@ -144,12 +144,18 @@ class SlotController extends Controller
         $rules = [
             'slotId' => ['required','exists:slots,id', new SlotNotBooked(), new SlotBookable()],
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email:rfc,dns',
             'category_id' => 'required|exists:categories,id',
             'remarks' => '',
+            'checkS' => 'max:0'
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $messages = [
+            'category_id.exists' => 'The selected category is invalid',
+            'checkS.max' => "You filled out a spam prevention field that shouldn't be filled in... We didn't take your request into account."
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
         if (!$validator->fails()) {
             try{
                 $slot = Slot::find($request->get('slotId'));

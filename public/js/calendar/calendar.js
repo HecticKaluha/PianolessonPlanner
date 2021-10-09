@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*",
             "X-Requested-With": "XMLHttpRequest",
+            // "X-CSRF-TOKEN": token,
         },
         method: 'get',
         credentials: "same-origin"
@@ -104,14 +105,15 @@ function closeModal() {
 }
 
 function bookEvent() {
-    clearFields(['nameError', 'emailError', 'category_idError']);
+    clearFields(['nameError', 'emailError', 'category_idError', 'checkSError']);
     let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     var body = {
         slotId: slotId.getAttribute('value'),
         name: nameInput.value,
         email: email.value,
         category_id: category.value,
-        remarks: remarks.value
+        remarks: remarks.value,
+        checkS: checkS.value,
     };
     fetch(bookSlotUrl, {
         headers: {
@@ -184,7 +186,7 @@ function openModal(slot) {
     bookEventModal.classList.remove('hidden');
 }
 
-function clearFields(fields = ['slotDate', 'slotTime', 'nameError', 'emailError', 'category_idError']){
+function clearFields(fields = ['slotDate', 'slotTime', 'nameError', 'emailError', 'category_idError', 'checkSError']){
     fields.forEach(function(value){
         document.getElementById(value).innerText = "";
     })
