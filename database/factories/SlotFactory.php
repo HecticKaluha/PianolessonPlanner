@@ -25,7 +25,7 @@ class SlotFactory extends Factory
     {
         $now = Carbon::now();
         $daysFromNow = rand(0, 1000);
-        $categories = [1,2,3,4,5,6,7,null,null,null,null,null];
+        $categories = [1,2,3,4,5,null,null,null,null,null];
         $category = $categories[rand(0, count($categories)-1)];
         $lessonDay =$now->addDays($daysFromNow);
         return [

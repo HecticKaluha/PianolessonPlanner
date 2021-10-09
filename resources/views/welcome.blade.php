@@ -177,35 +177,35 @@
                 <div class="flex flex-wrap mt-12 mb-12 justify-center">
                     <div class="w-full md:w-7/12 ml-auto mr-auto px-4">
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/professional.jpg')}}"/>
-                        <blockquote class="relative mt-4">
-                            <h4 class="text-xl font-bold text-white">
-                                Final exam 1</h4>
-                            <p class="text-md font-light mt-2 text-white">
-                                Sunny Lee's final exam performance with live audience.
-                            </p>
-                        </blockquote>
+{{--                        <blockquote class="relative mt-4">--}}
+{{--                            <h4 class="text-xl font-bold text-white">--}}
+{{--                                Final exam 1</h4>--}}
+{{--                            <p class="text-md font-light mt-2 text-white">--}}
+{{--                                Sunny Lee's final exam performance with live audience.--}}
+{{--                            </p>--}}
+{{--                        </blockquote>--}}
 
                         <div class="flex flex-wrap justify-center">
                             <div class="w-full md:w-6/12 mt-12 ml-auto mr-auto md:pr-4">
                                 <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/showcase2.jpg')}}"/>
-                                <blockquote class="relative mt-4">
-                                    <h4 class="text-xl font-bold text-white">
-                                        Final exam 2.1</h4>
-                                    <p class="text-md font-light mt-2 text-white">
-                                        Sunny Lee's final exam performance with live audience.
-                                    </p>
-                                </blockquote>
+{{--                                <blockquote class="relative mt-4">--}}
+{{--                                    <h4 class="text-xl font-bold text-white">--}}
+{{--                                        Final exam 2.1</h4>--}}
+{{--                                    <p class="text-md font-light mt-2 text-white">--}}
+{{--                                        Sunny Lee's final exam performance with live audience.--}}
+{{--                                    </p>--}}
+{{--                                </blockquote>--}}
                             </div>
 
                             <div class="w-full md:w-6/12 mt-12 mb-12 ml-auto mr-auto md:pl-4">
                                 <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/showcase3.png')}}"/>
-                                <blockquote class="relative mt-4">
-                                    <h4 class="text-xl font-bold text-white">
-                                        Final exam 2.2</h4>
-                                    <p class="text-md font-light mt-2 text-white">
-                                        Sunny Lee's final exam performance with live audience.
-                                    </p>
-                                </blockquote>
+{{--                                <blockquote class="relative mt-4">--}}
+{{--                                    <h4 class="text-xl font-bold text-white">--}}
+{{--                                        Final exam 2.2</h4>--}}
+{{--                                    <p class="text-md font-light mt-2 text-white">--}}
+{{--                                        Sunny Lee's final exam performance with live audience.--}}
+{{--                                    </p>--}}
+{{--                                </blockquote>--}}
                             </div>
 
                         </div>
@@ -213,22 +213,22 @@
 
                     <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/showcase4.jpeg')}}"/>
-                        <blockquote class="relative mt-4 mb-12">
-                            <h4 class="text-xl font-bold text-white">
-                                Final exam 4</h4>
-                            <p class="text-md font-light mt-2 text-white">
-                                Sunny Lee's final exam performance with live audience.
-                            </p>
-                        </blockquote>
+{{--                        <blockquote class="relative mt-4 mb-12">--}}
+{{--                            <h4 class="text-xl font-bold text-white">--}}
+{{--                                Final exam 4</h4>--}}
+{{--                            <p class="text-md font-light mt-2 text-white">--}}
+{{--                                Sunny Lee's final exam performance with live audience.--}}
+{{--                            </p>--}}
+{{--                        </blockquote>--}}
 
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/showcase5.png')}}"/>
-                        <blockquote class="relative mt-4 mb-4">
-                            <h4 class="text-xl font-bold text-white">
-                                Final exam 5</h4>
-                            <p class="text-md font-light mt-2 text-white">
-                                Sunny Lee's final exam performance with live audience.
-                            </p>
-                        </blockquote>
+{{--                        <blockquote class="relative mt-4 mb-4">--}}
+{{--                            <h4 class="text-xl font-bold text-white">--}}
+{{--                                Final exam 5</h4>--}}
+{{--                            <p class="text-md font-light mt-2 text-white">--}}
+{{--                                Sunny Lee's final exam performance with live audience.--}}
+{{--                            </p>--}}
+{{--                        </blockquote>--}}
                     </div>
 
                 </div>
@@ -250,13 +250,13 @@
                         @endif
 
 
-                        <blockquote class="relative mt-4 mb-4">
-                            <h4 class="text-xl font-bold text-white">
-                                Current movie </h4>
-                            <p class="text-md font-light mt-2 text-white">
-                                The description of the video that is currently playing.
-                            </p>
-                        </blockquote>
+{{--                        <blockquote class="relative mt-4 mb-4">--}}
+{{--                            <h4 class="text-xl font-bold text-white">--}}
+{{--                                Current movie </h4>--}}
+{{--                            <p class="text-md font-light mt-2 text-white">--}}
+{{--                                The description of the video that is currently playing.--}}
+{{--                            </p>--}}
+{{--                        </blockquote>--}}
                     </div>
 
 
@@ -270,14 +270,14 @@
 
                 <div class="flex flex-wrap justify-center">
 
-                    <div id="videoCarousel" class="w-full w-12/12 space-x-4 overflow-x-scroll flex justify-between px-4 rail">
+                    <div id="videoCarousel" class="w-full w-12/12 space-x-4 overflow-x-scroll flex justify-start px-4 rail">
 
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/thumbnails/sxo.png')}}"/>
                         <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" data-ytsrc="https://www.youtube.com/embed/GL2ulyPSngc" src="{{asset('img/thumbnails/RDWF.png')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/banner.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/piano.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" data-ytsrc="" src="{{asset('img/professional.jpg')}}"/>
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/banner.jpg')}}"/>
+{{--                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/banner.jpg')}}"/>--}}
+{{--                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/piano.jpg')}}"/>--}}
+{{--                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/RDWF.mp4')}}" data-ytsrc="" src="{{asset('img/professional.jpg')}}"/>--}}
+{{--                        <img alt="..." class="max-w-full rounded-lg shadow-lg" data-src="{{asset('video/SXO.mp4')}}" data-ytsrc="" src="{{asset('img/banner.jpg')}}"/>--}}
 
                     </div>
 
