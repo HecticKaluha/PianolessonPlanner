@@ -185,9 +185,3 @@ function openModal(slot) {
     slotId.value = slot.extendedProps.customId;
     bookEventModal.classList.remove('hidden');
 }
-
-function clearFields(fields = ['slotDate', 'slotTime', 'nameError', 'emailError', 'category_idError', 'checkSError']){
-    fields.forEach(function(value){
-        document.getElementById(value).innerText = "";
-    })
-}

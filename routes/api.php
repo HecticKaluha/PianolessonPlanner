@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SlotController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,5 @@ Route::get('/api/slots', [SlotController::class, 'getAll'])
 Route::post('/api/bookSlot', [SlotController::class, 'bookSlot'])
     ->name('bookSlot');
 
+Route::post('/api/sendQuestion', [QuestionController::class, 'sendQuestion'])
+    ->name('sendQuestionForm');

@@ -413,21 +413,44 @@
                                 <h4 class="text-2xl font-semibold">More Questions?</h4>
                                 <p class="leading-relaxed mt-1 mb-4 text-gray-600">
                                     Complete this form and I will get back to you ASAP. </p>
+
+                                <span class="text-red-500 text-sm" role="alert">
+                                    <strong id="qfCheckSError"></strong>
+                                </span>
                                 <div class="relative w-full mb-3 mt-8">
                                     <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="full-name">Full
-                                        Name</label><input type="text" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Full Name" style="transition: all 0.15s ease 0s;"/>
+                                        Name</label>
+                                    <input type="text" id="qfFullName" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Full Name" style="transition: all 0.15s ease 0s;" required />
+                                    <span class="text-red-500 text-sm" role="alert">
+                                        <strong id="qfFullNameError"></strong>
+                                    </span>
                                 </div>
                                 <div class="relative w-full mb-3">
-                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="email">Email</label><input type="email" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Email" style="transition: all 0.15s ease 0s;"/>
+                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="email">E-mail</label>
+                                    <input id="qfEmail" type="email" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="E-mail" style="transition: all 0.15s ease 0s;" required />
+                                    <span class="text-red-500 text-sm" role="alert">
+                                        <strong id="qfEmailError"></strong>
+                                    </span>
                                 </div>
                                 <div class="relative w-full mb-3">
-                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="message">Message</label><textarea rows="4" cols="80" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Type a message..."></textarea>
+                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="message">Message</label>
+                                    <textarea id="qfMessage" rows="4" cols="80" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Type a message..."></textarea>
+                                    <span class="text-red-500 text-sm" role="alert">
+                                        <strong id="qfMessageError"></strong>
+                                    </span>
                                 </div>
+
+                                <div class="relative w-full mb-3 invisible hidden">
+                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="checkS">Leave this field blank</label>
+                                    <input id="qfCheckS" type="text" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Don't fill in this field" style="transition: all 0.15s ease 0s;"/>
+                                </div>
+
                                 <div class="text-center mt-6">
-                                    <button class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all 0.15s ease 0s;">
+                                    <button id="sendQuestionForm" class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all 0.15s ease 0s;">
                                         Send Message
                                     </button>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -452,15 +475,31 @@
             let bookSlotUrl = '{{route('bookSlot')}}';
             let categoriesUrl = '{{route('getAllCategories')}}';
             let slotsUrl = '{{route('getAllSlots')}}';
+            let sendQuestionFormUrl = '{{route('sendQuestionForm')}}';
             var calendar;
             var calendarEl;
             var events = [];
+        </script>
+        <script>
+            function clearFields(fields = ['slotDate', 'slotTime', 'nameError', 'emailError', 'category_idError', 'checkSError']){
+                fields.forEach(function(value){
+                    document.getElementById(value).innerText = "";
+                })
+            }
+            function clearValues(fields = ['qfFullName', 'qfEmail', 'qfMessage']){
+                fields.forEach(function(value){
+                    console.log('clearing', value)
+                    document.getElementById(value).value = "";
+                })
+            }
+
         </script>
         <script src="{{asset('js/calendar/calendar.js')}}"></script>
 
         <script src="{{asset('js/carousel/carousel.js')}}"></script>
         <script src="{{asset('js/biography/biography.js')}}"></script>
         <script src="{{asset('js/privacy/privacyPolicy.js')}}"></script>
+        <script src="{{asset('js/questionform/questionform.js')}}"></script>
         <script>
             function toggleNavbar(collapseID) {
                 document.getElementById(collapseID).classList.toggle("hidden");

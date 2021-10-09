@@ -151,7 +151,7 @@ class SlotController extends Controller
         ];
 
         $messages = [
-            'category_id.exists' => 'The selected category is invalid',
+            'category_id.exists' => 'The selected category is invalid.',
             'checkS.max' => "You filled out a spam prevention field that shouldn't be filled in... We didn't take your request into account."
         ];
 
