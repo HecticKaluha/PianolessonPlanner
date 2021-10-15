@@ -223,7 +223,7 @@
 {{--                            </p>--}}
 {{--                        </blockquote>--}}
 
-                        <img alt="..." class="max-w-full rounded-lg shadow-lg" src="{{asset('img/showcase5.png')}}"/>
+                        <img alt="..." class="md:xs-12 max-w-full rounded-lg shadow-lg" src="{{asset('img/showcase5.png')}}"/>
 {{--                        <blockquote class="relative mt-4 mb-4">--}}
 {{--                            <h4 class="text-xl font-bold text-white">--}}
 {{--                                Final exam 5</h4>--}}

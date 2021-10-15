@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     @stack('token')
 
-    <title>Sunhee Lee, Pianist</title>
+    <title>Sunny Lee, Pianist</title>
 
     <meta name="description" content="Website for planning">
     <meta name="author" content="Stefano Verhoeve">
