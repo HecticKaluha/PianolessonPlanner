@@ -22,9 +22,9 @@ class UserSeeder extends Seeder
         }
         DB::table('users')->insert([
             'name' => 'Sunny',
-            'email' => 'sunny6094@naver.com',
+            'email' => env('ADMIN_EMAIL'),
             'email_verified_at' => Carbon::now(),
-            'password' => '$2y$10$dWKF8HpwkkLbDWnB24vwf.8hHnd6wC3z2/xnMwzC2Wv.gOcgjisje',
+            'password' => bcrypt(env('ADMIN_PASSWORD')),
         ]);
         $this->command->info("Seeded user Sunny");
     }
