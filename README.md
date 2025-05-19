@@ -1,7 +1,7 @@
 # PianolessonPlanner
 Website built in Laravel. This website allows people to plan a piano lesson with a pianist according to their planning.
 
-# Features
+## Features
 - The pianist can fill a calendar with available slots
 - People can book slots within the calendar in which they want to get a pianolesson
 - Mailupdates whenever a lesson is planned
@@ -19,7 +19,7 @@ Website built in Laravel. This website allows people to plan a piano lesson with
 3. composer update & install
 4. npm update & install
 5. php artisan key:generate
-7. Setup the ADMIN_EMAIL and ADMIN_PASSWORD in the .env
+7. Setup the ADMIN_EMAIL and ADMIN_PASSWORD in the .env (this allows access to the admin page (route = /dashboard)
 8. Setup rest of .env file (database etc.)
 9. php migrate:fresh --seed
 10. npm run watch
@@ -29,4 +29,6 @@ Website built in Laravel. This website allows people to plan a piano lesson with
 ## Notes
 1. some functionality requires correct mail credentials to be set up
 2. Some functionality requires jobs and workersqueues
+3. To have FontAwesome icons you need a valid route to your FontAwesome kit
+4. To have TinyMCE work you need a valid  TinyMCE API token
 
